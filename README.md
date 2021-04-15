@@ -9,7 +9,7 @@
 
 
 ### Proyecto
-- Encuesta
+- Encuesta.
 Permite aplicar y editar encuestas de satisfacción del cliente.
 
 ## Indice
