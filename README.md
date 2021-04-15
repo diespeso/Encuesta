@@ -14,10 +14,9 @@
 # Encuesta
 Proyecto para la materia de Administración de bases de datos. Este proyecto permite aplicar y editar encuestas de satisfacción del cliente.
 
-## Diagrama E-R
-<p align="center"> 
-    <img alt="Diagrama" src="./imagenes/DiagramaV1.png" >    
-</p>
+## Indice
+- [Diagrama](/imagenes/DiagramaV1.png)
+
 
 ## DDL
 ```SQL
