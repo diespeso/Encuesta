@@ -7,10 +7,11 @@
 - Regalado Lopez Edgar Eduardo
 - Meza Guerrero Alberto Hazael
 
-
 ### Proyecto
 - Encuesta.
 Permite aplicar y editar encuestas de satisfacción del cliente.
+
+---
 
 ## Indice
 ### Avance 1
