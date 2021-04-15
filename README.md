@@ -1,10 +1,10 @@
 ## Instituto Tecnologico de Tijuana
 - Integrantes:
-Rojas Ceballos Oscar Alonso
-Garcia Chacon Daniel
-Dominguez Cruz Carolina
-Regalado Lopez Edgar Eduardo
-Meza Guerrero Alberto Hazael
+- Rojas Ceballos Oscar Alonso
+- Garcia Chacon Daniel
+- Dominguez Cruz Carolina
+- Regalado Lopez Edgar Eduardo
+- Meza Guerrero Alberto Hazael
 
 - Numero de Control: 
 - Carrera: Ing en Sistemas Computacionales
