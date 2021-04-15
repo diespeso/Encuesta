@@ -1,3 +1,4 @@
+```SQL
 create database Encuesta;
 use Encuesta;
 
@@ -102,3 +103,4 @@ foreign key (userRoleId) references userRoles(userRoleId),
 foreign key (permitId) references permits(permitId),
 check (permitAllowed = 0 or permitAllowed = 1)
 );
+```SQL
