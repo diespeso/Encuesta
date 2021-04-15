@@ -1,6 +1,6 @@
 ## Instituto Tecnologico de Tijuana
 
-###Integrantes:
+### Integrantes:
 - Rojas Ceballos Oscar Alonso
 - Garcia Chacon Daniel
 - Dominguez Cruz Carolina
@@ -8,7 +8,7 @@
 - Meza Guerrero Alberto Hazael
 
 
-###Proyecto
+### Proyecto
 - Encuesta
 Permite aplicar y editar encuestas de satisfacción del cliente.
 
