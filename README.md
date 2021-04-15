@@ -1,3 +1,16 @@
+## Instituto Tecnologico de Tijuana
+- Integrantes:
+Rojas Ceballos Oscar Alonso
+Garcia Chacon Daniel
+Dominguez Cruz Carolina
+Regalado Lopez Edgar Eduardo
+Meza Guerrero Alberto Hazael
+
+- Numero de Control: 
+- Carrera: Ing en Sistemas Computacionales
+- Materia:
+- Clave:
+
 # Encuesta
 Proyecto para la materia de Administración de bases de datos. Este proyecto permite aplicar y editar encuestas de satisfacción del cliente.
 
