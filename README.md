@@ -3,7 +3,7 @@ Proyecto para la materia de Administración de bases de datos. Este proyecto per
 
 ## Diagrama E-R
 <p align="center"> 
-    <img alt="Diagrama" src="../Encuesta/imagenes/DiagramaV1.png" >    
+    <img alt="Diagrama" src="../imagenes/DiagramaV1.png" >    
 </p>
 
 ## DDL
