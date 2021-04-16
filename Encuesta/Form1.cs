@@ -16,6 +16,5 @@ namespace Encuesta
         {
             InitializeComponent();
         }
-
     }
 }
