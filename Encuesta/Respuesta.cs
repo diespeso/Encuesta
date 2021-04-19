@@ -41,5 +41,34 @@ namespace Encuesta
                     throw new Exception("Se intentó convertir a RespuestaCualitativa una String inválida.");
             }
         }
+        /// <summary>
+        /// Devuelve una repuesta cualitativa dependiendo del numero dado, donde un 1 dará TERRIBLE, mientras que un 5 dará EXCELENTE
+        /// y cualquier numero que no pueda ser trazado a una respuesta dará INVALIDO
+        /// </summary>
+        /// <param name="respuesta"></param>
+        /// <returns></returns>
+        public static RespuestaCualitativa IntToRespuestaCualitativa(int respuesta)
+        {
+            switch(respuesta)
+            {
+                case 1:
+                    return RespuestaCualitativa.TERRIBLE;
+                    break;
+                case 2:
+                    return RespuestaCualitativa.MALO;
+                    break;
+                case 3:
+                    return RespuestaCualitativa.REGULAR;
+                    break;
+                case 4:
+                    return RespuestaCualitativa.BUENO;
+                    break;
+                case 5:
+                    return RespuestaCualitativa.EXCELENTE;
+                    break;
+                default:
+                    return RespuestaCualitativa.INVALIDO;
+            }
+        }
     }
 }

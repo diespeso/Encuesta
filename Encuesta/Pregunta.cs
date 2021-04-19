@@ -40,6 +40,11 @@ namespace Encuesta
             return this.respuesta != RespuestaCualitativa.INVALIDO;
         }
 
+        public String GetPreguntaTextual()
+        {
+            return this.pregunta;
+        }
+
         public override string ToString()
         {
             return String.Format("/(Pregunta: {0}, Respuesta: {1})", this.pregunta, this.respuesta);
