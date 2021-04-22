@@ -17,4 +17,4 @@ Permite aplicar y editar encuestas de satisfacción del cliente.
 ### Avance 1
 - [Diagrama](/imagenes/DiagramaV1.png)
 - [SQL](/MySQL/Encuesta.sql)
-- [Proyecto](/Encuesta/Encuesta)
+- [Proyecto](../Encuesta/Encuesta)
