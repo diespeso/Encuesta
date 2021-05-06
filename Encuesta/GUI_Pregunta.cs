@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
 
 using Encuesta.Properties;
 
@@ -34,41 +35,19 @@ namespace Encuesta
         public void Iniciar(List<Pregunta> preguntas)
         {
             this.motor = new MotorPreguntas(preguntas);
-            Pregunta prim = this.motor.GetPreguntaActual();
-            label1.Text = prim.GetPreguntaTextual();
+            Pregunta prim = this.motor.GetPreguntaActual(); //primera pregunta
+            label1.Text = prim.GetPreguntaTextual(); //mostrar la primera pregunta
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(String.Format("Pregunta actual: {0}", this.motor.GetPreguntaActual()));
-            Console.WriteLine(String.Format("Pregunta actual contestada con: {0}", motor.GetPreguntaActual().GetRespuesta()));
-            try
-            {
-                motor.Avanzar();
-            }catch(NoContestadoException ex)
-            {
-                MessageBox.Show("Por favor conteste la pregunta antes de avanzar");
-            }catch(AvanzarEnCompletadoException ex)
-            {
-                Console.WriteLine("Todas las preguntas del motor fueron contestadas");
-                Console.WriteLine("Resultados:");
-                foreach(Pregunta preg in motor.ObtenerResultados())
-                {
-                    Console.WriteLine(String.Format("Pregunta: {0}, Respuesta: {1}", preg.GetPreguntaTextual(), preg.GetRespuesta()));
-                }
-                Limpiar();
-                return;
-            }
-
-            label1.Text = this.motor.GetPreguntaActual().GetPreguntaTextual();
-            ReiniciarEstrellas();
+          //antes se usaba para avanzar, es automatico ahora
         }
 
         public void Limpiar()
         {
             label1.Text = "";
-            btn_siguiente.Hide();
             estrella_1.Hide();
             estrella_2.Hide();
             estrella_3.Hide();
@@ -95,7 +74,7 @@ namespace Encuesta
         /// a la calificación dada y que aparte actualiza el valor de la respuesta en la pregunta actual en el motor de preguntas.
         /// </summary>
         /// <param name="calificacion">valor numerico para calificar donde 1 significa terrible y 5 excelente</param>
-        public void CalificarPreguntaActualCon(int calificacion)
+        public async void CalificarPreguntaActualCon(int calificacion)
         {
             switch (calificacion)
             {
@@ -129,10 +108,42 @@ namespace Encuesta
             }
             Console.WriteLine(String.Format("Pregunta acutal será contestada con el valor: {0}", Respuesta.IntToRespuestaCualitativa(calificacion)));
             this.motor.Responder(Respuesta.IntToRespuestaCualitativa(calificacion));
+            await Task.Delay(1000); //espera 1 segundo
+            AvanzarPregunta(); //avanza automaticamente
+        }
+
+        private void AvanzarPregunta()
+        {
+            //mostrar la pregunta actual antes de avanzar
+            Console.WriteLine(String.Format("Pregunta actual: {0}", this.motor.GetPreguntaActual()));
+            Console.WriteLine(String.Format("Pregunta actual contestada con: {0}", motor.GetPreguntaActual().GetRespuesta()));
+            try
+            {
+                motor.Avanzar();
+            }
+            catch (NoContestadoException ex)
+            {
+                MessageBox.Show("Por favor conteste la pregunta antes de avanzar");
+            }
+            catch (AvanzarEnCompletadoException ex)
+            {
+                Console.WriteLine("Todas las preguntas del motor fueron contestadas");
+                Console.WriteLine("Resultados:");
+                foreach (Pregunta preg in motor.ObtenerResultados())
+                {
+                    Console.WriteLine(String.Format("Pregunta: {0}, Respuesta: {1}", preg.GetPreguntaTextual(), preg.GetRespuesta()));
+                }
+                Limpiar();
+                return;
+            }
+
+            label1.Text = this.motor.GetPreguntaActual().GetPreguntaTextual();
+            ReiniciarEstrellas();
         }
 
         public void ReiniciarEstrellas() {
             //nota personal hardcodearlo esta bien si se que seran solo n elementos
+            
             this.estrella_1.Image = Resources.silueta_de_estrella_negra;
             this.estrella_2.Image = Resources.silueta_de_estrella_negra;
             this.estrella_3.Image = Resources.silueta_de_estrella_negra;

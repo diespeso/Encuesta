@@ -30,7 +30,6 @@ namespace Encuesta
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI_Pregunta));
-            this.btn_siguiente = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.estrella_1 = new System.Windows.Forms.PictureBox();
             this.estrella_2 = new System.Windows.Forms.PictureBox();
@@ -43,16 +42,6 @@ namespace Encuesta
             ((System.ComponentModel.ISupportInitialize)(this.estrella_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estrella_5)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_siguiente
-            // 
-            this.btn_siguiente.Location = new System.Drawing.Point(351, 367);
-            this.btn_siguiente.Name = "btn_siguiente";
-            this.btn_siguiente.Size = new System.Drawing.Size(75, 23);
-            this.btn_siguiente.TabIndex = 0;
-            this.btn_siguiente.Text = "Siguiente";
-            this.btn_siguiente.UseVisualStyleBackColor = true;
-            this.btn_siguiente.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -129,7 +118,6 @@ namespace Encuesta
             this.Controls.Add(this.estrella_2);
             this.Controls.Add(this.estrella_1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_siguiente);
             this.Name = "GUI_Pregunta";
             this.Text = "GUI_Pregunta";
             this.Load += new System.EventHandler(this.GUI_Pregunta_Load);
@@ -145,8 +133,6 @@ namespace Encuesta
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_siguiente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox estrella_1;
         private System.Windows.Forms.PictureBox estrella_2;
