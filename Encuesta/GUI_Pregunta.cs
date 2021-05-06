@@ -21,6 +21,7 @@ namespace Encuesta
     {
 
         private MotorPreguntas motor;
+        private Form agradecimiento;
         
         public GUI_Pregunta()
         {
@@ -30,6 +31,20 @@ namespace Encuesta
         private void GUI_Pregunta_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void AsignarAgradecimiento(Form agradecimiento)
+        {
+            this.agradecimiento = agradecimiento;
+        }
+
+        /// <summary>
+        /// Regresa a la forma de bienvenida asignada, o falla si no hay ninguna asignada
+        /// </summary>
+        private void IrAAgradecimiento()
+        { //se podria usar un trycatch, pero creo que es algo que debe fallar y ya
+            this.agradecimiento.Show();
+            this.Hide();
         }
 
         public void Iniciar(List<Pregunta> preguntas)
@@ -134,6 +149,7 @@ namespace Encuesta
                     Console.WriteLine(String.Format("Pregunta: {0}, Respuesta: {1}", preg.GetPreguntaTextual(), preg.GetRespuesta()));
                 }
                 Limpiar();
+                IrAAgradecimiento();
                 return;
             }
 

@@ -9,3 +9,4 @@ C:\Users\CDT\Documents\tec\bd\Encuesta\Encuesta\bin\Debug\Encuesta.exe
 C:\Users\CDT\Documents\tec\bd\Encuesta\Encuesta\bin\Debug\Encuesta.pdb
 C:\Users\CDT\Documents\tec\bd\Encuesta\Encuesta\obj\Debug\Encuesta.exe
 C:\Users\CDT\Documents\tec\bd\Encuesta\Encuesta\obj\Debug\Encuesta.pdb
+C:\Users\CDT\Documents\tec\bd\Encuesta\Encuesta\obj\Debug\Encuesta.Agradecimiento.resources
