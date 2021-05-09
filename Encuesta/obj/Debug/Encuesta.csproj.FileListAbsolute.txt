@@ -1,0 +1,15 @@
+C:\Users\Lenovo\Downloads\Encuesta\bin\Debug\Encuesta.exe.config
+C:\Users\Lenovo\Downloads\Encuesta\bin\Debug\Encuesta.exe
+C:\Users\Lenovo\Downloads\Encuesta\bin\Debug\Encuesta.pdb
+C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.csprojAssemblyReference.cache
+C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.NuevoDispositivo.resources
+C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.ThankYou.resources
+C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.Encuesta1p1.resources
+C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.Encuesta1p2.resources
+C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.Login.resources
+C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.Properties.Resources.resources
+C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.SeleccionarEncuesta.resources
+C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.csproj.GenerateResource.cache
+C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.exe
+C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.pdb
