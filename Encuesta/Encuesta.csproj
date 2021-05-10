@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Menu-Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu-Admin.Designer.cs">
+      <DependentUpon>Menu-Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="NuevoDispositivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <Compile Include="SeleccionarEncuesta.Designer.cs">
       <DependentUpon>SeleccionarEncuesta.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Menu-Admin.resx">
+      <DependentUpon>Menu-Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NuevoDispositivo.resx">
       <DependentUpon>NuevoDispositivo.cs</DependentUpon>
     </EmbeddedResource>
