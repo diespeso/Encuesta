@@ -25,10 +25,5 @@ namespace Encuesta
             frmselec.Show();
             this.Hide();
         }
-
-        private void NuevoDispositivo_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
