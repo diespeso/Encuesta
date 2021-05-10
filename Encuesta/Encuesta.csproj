@@ -58,6 +58,48 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu-Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu-Admin.Designer.cs">
+      <DependentUpon>Menu-Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nueva pregunta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nueva pregunta.Designer.cs">
+      <DependentUpon>Nueva pregunta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoDispositivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoDispositivo.Designer.cs">
+      <DependentUpon>NuevoDispositivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThankYou.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThankYou.Designer.cs">
+      <DependentUpon>ThankYou.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Encuesta1p1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Encuesta1p1.Designer.cs">
+      <DependentUpon>Encuesta1p1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Encuesta1p2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Encuesta1p2.Designer.cs">
+      <DependentUpon>Encuesta1p2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_Pregunta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +120,33 @@
     <EmbeddedResource Include="GUI_Pregunta.resx">
       <DependentUpon>GUI_Pregunta.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="SeleccionarEncuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeleccionarEncuesta.Designer.cs">
+      <DependentUpon>SeleccionarEncuesta.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Menu-Admin.resx">
+      <DependentUpon>Menu-Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nueva pregunta.resx">
+      <DependentUpon>Nueva pregunta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoDispositivo.resx">
+      <DependentUpon>NuevoDispositivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThankYou.resx">
+      <DependentUpon>ThankYou.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Encuesta1p1.resx">
+      <DependentUpon>Encuesta1p1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Encuesta1p2.resx">
+      <DependentUpon>Encuesta1p2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -88,6 +157,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SeleccionarEncuesta.resx">
+      <DependentUpon>SeleccionarEncuesta.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
