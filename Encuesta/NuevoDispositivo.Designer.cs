@@ -71,10 +71,9 @@ namespace Encuesta
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "NuevoDispositivo";
             this.Text = "NuevoDispositivo";
-            this.Load += new System.EventHandler(this.NuevoDispositivo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
