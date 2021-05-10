@@ -13,6 +13,7 @@ C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.csproj.GenerateResource.ca
 C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.exe
 C:\Users\Lenovo\Downloads\Encuesta\obj\Debug\Encuesta.pdb
+<<<<<<< HEAD
 C:\Users\Daniel\Source\Repos\Encuesta\Encuesta\bin\Debug\Encuesta.exe.config
 C:\Users\Daniel\Source\Repos\Encuesta\Encuesta\bin\Debug\Encuesta.exe
 C:\Users\Daniel\Source\Repos\Encuesta\Encuesta\bin\Debug\Encuesta.pdb
@@ -29,3 +30,21 @@ C:\Users\Daniel\Source\Repos\Encuesta\Encuesta\obj\Debug\Encuesta.csproj.Generat
 C:\Users\Daniel\Source\Repos\Encuesta\Encuesta\obj\Debug\Encuesta.csproj.CoreCompileInputs.cache
 C:\Users\Daniel\Source\Repos\Encuesta\Encuesta\obj\Debug\Encuesta.exe
 C:\Users\Daniel\Source\Repos\Encuesta\Encuesta\obj\Debug\Encuesta.pdb
+=======
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\bin\Debug\Encuesta.exe.config
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\bin\Debug\Encuesta.exe
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\bin\Debug\Encuesta.pdb
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\obj\Debug\Encuesta.csprojAssemblyReference.cache
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\obj\Debug\Encuesta.Nueva_pregunta.resources
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\obj\Debug\Encuesta.NuevoDispositivo.resources
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\obj\Debug\Encuesta.ThankYou.resources
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\obj\Debug\Encuesta.Encuesta1p1.resources
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\obj\Debug\Encuesta.Encuesta1p2.resources
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\obj\Debug\Encuesta.Login.resources
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\obj\Debug\Encuesta.Properties.Resources.resources
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\obj\Debug\Encuesta.SeleccionarEncuesta.resources
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\obj\Debug\Encuesta.csproj.GenerateResource.cache
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\obj\Debug\Encuesta.csproj.CoreCompileInputs.cache
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\obj\Debug\Encuesta.exe
+C:\Users\haza_\Source\Repos\diespeso\Encuesta\Encuesta\obj\Debug\Encuesta.pdb
+>>>>>>> 02efa4da26fa55545b73f2a0312ffe1a470f7e88
