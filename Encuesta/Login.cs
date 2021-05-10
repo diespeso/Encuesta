@@ -16,5 +16,11 @@ namespace Encuesta
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu_Admin menu_Admin = new Menu_Admin();
+            menu_Admin.Show();
+        }
     }
 }
