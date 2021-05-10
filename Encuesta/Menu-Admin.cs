@@ -19,14 +19,14 @@ namespace Encuesta
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Close();
             NuevoDispositivo nuevoDispositivo = new NuevoDispositivo();
+            nuevoDispositivo.Show();
         }
 
         private void cmdSubirEncuesta_Click(object sender, EventArgs e)
         {
-            this.Close();
             SeleccionarEncuesta seleccionarEncuesta = new SeleccionarEncuesta();
+            seleccionarEncuesta.Show();
         }
     }
 }

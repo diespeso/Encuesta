@@ -19,8 +19,8 @@ namespace Encuesta
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
             Menu_Admin menu_Admin = new Menu_Admin();
+            menu_Admin.Show();
         }
     }
 }
