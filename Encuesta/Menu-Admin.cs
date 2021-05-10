@@ -16,5 +16,17 @@ namespace Encuesta
         {
             InitializeComponent();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            NuevoDispositivo nuevoDispositivo = new NuevoDispositivo();
+        }
+
+        private void cmdSubirEncuesta_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            SeleccionarEncuesta seleccionarEncuesta = new SeleccionarEncuesta();
+        }
     }
 }

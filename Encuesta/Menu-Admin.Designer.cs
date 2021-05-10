@@ -33,9 +33,15 @@ namespace Encuesta
             this.cmdNuevaEncuesta = new System.Windows.Forms.Button();
             this.cmdModifEncuesta = new System.Windows.Forms.Button();
             this.cmdElimEncuesta = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.cmdNuevaPregunta = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.cmdSubirEncuesta = new System.Windows.Forms.Button();
+            this.lblNuevaEncuesta = new System.Windows.Forms.Label();
+            this.lblModifEncuesta = new System.Windows.Forms.Label();
+            this.lblElimEncuesta = new System.Windows.Forms.Label();
+            this.lblNuevaPregunta = new System.Windows.Forms.Label();
+            this.lblNuevoDispositivo = new System.Windows.Forms.Label();
+            this.lblSubirEncuesta = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmdNuevaEncuesta
@@ -71,47 +77,117 @@ namespace Encuesta
             this.cmdElimEncuesta.TabIndex = 2;
             this.cmdElimEncuesta.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // cmdNuevaPregunta
             // 
-            this.button4.Location = new System.Drawing.Point(12, 261);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(162, 137);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.cmdNuevaPregunta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdNuevaPregunta.ForeColor = System.Drawing.SystemColors.Window;
+            this.cmdNuevaPregunta.Image = ((System.Drawing.Image)(resources.GetObject("cmdNuevaPregunta.Image")));
+            this.cmdNuevaPregunta.Location = new System.Drawing.Point(12, 261);
+            this.cmdNuevaPregunta.Name = "cmdNuevaPregunta";
+            this.cmdNuevaPregunta.Size = new System.Drawing.Size(162, 137);
+            this.cmdNuevaPregunta.TabIndex = 3;
+            this.cmdNuevaPregunta.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.SystemColors.Window;
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.Location = new System.Drawing.Point(318, 261);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(162, 137);
             this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button6
+            // cmdSubirEncuesta
             // 
-            this.button6.Location = new System.Drawing.Point(626, 261);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(162, 137);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.cmdSubirEncuesta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdSubirEncuesta.ForeColor = System.Drawing.SystemColors.Window;
+            this.cmdSubirEncuesta.Image = ((System.Drawing.Image)(resources.GetObject("cmdSubirEncuesta.Image")));
+            this.cmdSubirEncuesta.Location = new System.Drawing.Point(626, 261);
+            this.cmdSubirEncuesta.Name = "cmdSubirEncuesta";
+            this.cmdSubirEncuesta.Size = new System.Drawing.Size(162, 137);
+            this.cmdSubirEncuesta.TabIndex = 5;
+            this.cmdSubirEncuesta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.cmdSubirEncuesta.UseVisualStyleBackColor = true;
+            this.cmdSubirEncuesta.Click += new System.EventHandler(this.cmdSubirEncuesta_Click);
+            // 
+            // lblNuevaEncuesta
+            // 
+            this.lblNuevaEncuesta.AutoSize = true;
+            this.lblNuevaEncuesta.Location = new System.Drawing.Point(53, 196);
+            this.lblNuevaEncuesta.Name = "lblNuevaEncuesta";
+            this.lblNuevaEncuesta.Size = new System.Drawing.Size(80, 13);
+            this.lblNuevaEncuesta.TabIndex = 6;
+            this.lblNuevaEncuesta.Text = "Crear Encuesta";
+            // 
+            // lblModifEncuesta
+            // 
+            this.lblModifEncuesta.AutoSize = true;
+            this.lblModifEncuesta.Location = new System.Drawing.Point(350, 196);
+            this.lblModifEncuesta.Name = "lblModifEncuesta";
+            this.lblModifEncuesta.Size = new System.Drawing.Size(98, 13);
+            this.lblModifEncuesta.TabIndex = 7;
+            this.lblModifEncuesta.Text = "Modificar Encuesta";
+            // 
+            // lblElimEncuesta
+            // 
+            this.lblElimEncuesta.AutoSize = true;
+            this.lblElimEncuesta.Location = new System.Drawing.Point(663, 196);
+            this.lblElimEncuesta.Name = "lblElimEncuesta";
+            this.lblElimEncuesta.Size = new System.Drawing.Size(91, 13);
+            this.lblElimEncuesta.TabIndex = 8;
+            this.lblElimEncuesta.Text = "Eliminar Encuesta";
+            // 
+            // lblNuevaPregunta
+            // 
+            this.lblNuevaPregunta.AutoSize = true;
+            this.lblNuevaPregunta.Location = new System.Drawing.Point(22, 401);
+            this.lblNuevaPregunta.Name = "lblNuevaPregunta";
+            this.lblNuevaPregunta.Size = new System.Drawing.Size(152, 13);
+            this.lblNuevaPregunta.TabIndex = 9;
+            this.lblNuevaPregunta.Text = "Nueva pregunta personalizada";
+            // 
+            // lblNuevoDispositivo
+            // 
+            this.lblNuevoDispositivo.AutoSize = true;
+            this.lblNuevoDispositivo.Location = new System.Drawing.Point(330, 401);
+            this.lblNuevoDispositivo.Name = "lblNuevoDispositivo";
+            this.lblNuevoDispositivo.Size = new System.Drawing.Size(134, 13);
+            this.lblNuevoDispositivo.TabIndex = 10;
+            this.lblNuevoDispositivo.Text = "Registrar nuevo dispositivo";
+            // 
+            // lblSubirEncuesta
+            // 
+            this.lblSubirEncuesta.AutoSize = true;
+            this.lblSubirEncuesta.Location = new System.Drawing.Point(639, 401);
+            this.lblSubirEncuesta.Name = "lblSubirEncuesta";
+            this.lblSubirEncuesta.Size = new System.Drawing.Size(139, 13);
+            this.lblSubirEncuesta.TabIndex = 11;
+            this.lblSubirEncuesta.Text = "Subir encuesta a dispositivo";
             // 
             // Menu_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.lblSubirEncuesta);
+            this.Controls.Add(this.lblNuevoDispositivo);
+            this.Controls.Add(this.lblNuevaPregunta);
+            this.Controls.Add(this.lblElimEncuesta);
+            this.Controls.Add(this.lblModifEncuesta);
+            this.Controls.Add(this.lblNuevaEncuesta);
+            this.Controls.Add(this.cmdSubirEncuesta);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.cmdNuevaPregunta);
             this.Controls.Add(this.cmdElimEncuesta);
             this.Controls.Add(this.cmdModifEncuesta);
             this.Controls.Add(this.cmdNuevaEncuesta);
             this.Name = "Menu_Admin";
             this.Text = "Menu_Admin";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -120,8 +196,14 @@ namespace Encuesta
         private System.Windows.Forms.Button cmdNuevaEncuesta;
         private System.Windows.Forms.Button cmdModifEncuesta;
         private System.Windows.Forms.Button cmdElimEncuesta;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button cmdNuevaPregunta;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button cmdSubirEncuesta;
+        private System.Windows.Forms.Label lblNuevaEncuesta;
+        private System.Windows.Forms.Label lblModifEncuesta;
+        private System.Windows.Forms.Label lblElimEncuesta;
+        private System.Windows.Forms.Label lblNuevaPregunta;
+        private System.Windows.Forms.Label lblNuevoDispositivo;
+        private System.Windows.Forms.Label lblSubirEncuesta;
     }
 }
