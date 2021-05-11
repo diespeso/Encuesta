@@ -29,6 +29,7 @@ namespace Encuesta.Repositories
                         cmd.Parameters.AddWithValue("@quizName", quizModel.QuizName);
                         con.Open();
                         cmd.ExecuteNonQuery();
+                        quizModel.QuizId = Convert.ToInt32(cmd.LastInsertedId);
                     }
                 }
             }
@@ -80,7 +81,6 @@ namespace Encuesta.Repositories
                                     item = new QuizModel();
                                     item.QuizId = Convert.ToInt32(dr["quizId"]);
                                     item.QuizName = dr["quizName"].ToString();
-
                                     return item;
                                 }
                         }
@@ -97,7 +97,41 @@ namespace Encuesta.Repositories
 
         public IEnumerable<QuizModel> GetAll()
         {
-            return null;
+            List<QuizModel> list;
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(_connectionString))
+                {
+                    string sql = "select * from quiz;";
+                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                    {
+                        list = new List<QuizModel>();
+                        con.Open();
+                        using (MySqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.HasRows)
+                            {
+                                while (dr.Read())
+                                {
+                                    list.Add(new QuizModel()
+                                    {
+                                        QuizId = Convert.ToInt32(dr["quizId"]),
+                                        QuizName = dr["quizName"].ToString()
+                                    });
+                                }
+
+                                return list;
+                            }
+                            else
+                                return null;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
         }
 
         public void Delete(int quizId)

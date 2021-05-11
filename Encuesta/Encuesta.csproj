@@ -50,13 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ENTIDADES\answeredquizcrud.cs" />
-    <Compile Include="ENTIDADES\answeredquizdetailscrud.cs" />
-    <Compile Include="ENTIDADES\answerscrud.cs" />
-    <Compile Include="ENTIDADES\answersgroupcrud.cs" />
-    <Compile Include="ENTIDADES\CRUD_quiz.cs" />
-    <Compile Include="ENTIDADES\permitscrud.cs" />
-    <Compile Include="ENTIDADES\questionscrud.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
