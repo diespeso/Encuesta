@@ -46,17 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu-Admin.cs">
-    	<SubType>Form</SubType>
-    </Compile>	
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Agradecimiento.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Agradecimiento.Designer.cs">
       <DependentUpon>Agradecimiento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu-Admin.Designer.cs">
       <DependentUpon>Menu-Admin.cs</DependentUpon>
@@ -113,7 +116,6 @@
     <Compile Include="SeleccionarEncuesta.Designer.cs">
       <DependentUpon>SeleccionarEncuesta.cs</DependentUpon>
     </Compile>
-
     <EmbeddedResource Include="Menu-Admin.resx">
       <DependentUpon>Menu-Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,9 +140,6 @@
     <Compile Include="Respuesta.cs" />
     <EmbeddedResource Include="Agradecimiento.resx">
       <DependentUpon>Agradecimiento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_Pregunta.resx">
       <DependentUpon>GUI_Pregunta.cs</DependentUpon>

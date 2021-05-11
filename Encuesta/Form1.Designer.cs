@@ -61,4 +61,3 @@ namespace Encuesta
         private System.Windows.Forms.Label label1;
     }
 }
-
