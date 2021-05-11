@@ -7,10 +7,8 @@ using MySql.Data.MySqlClient;
 
 namespace Encuesta.ENTIDADES
 {
-    class CRUD_quiz
-    {
-        /*INSERTAR DATOS*/
-        private void Insert(object sender, EventArgs e)
+    /*INSERTAR DATOS*/
+    private void Insert(object sender, EventArgs e)
     {
         try
         {
@@ -118,9 +116,9 @@ namespace Encuesta.ENTIDADES
         }
 
         catch (Exception ex)
-          {
+        {
             /*MessageBox.Show(ex.Message);  */
-          }
         }
-    }  
+    }
+}  
 }

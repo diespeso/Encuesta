@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ENTIDADES\CRUDquiz_has_questions.cs" />
     <Compile Include="ENTIDADES\CRUD_quiz.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
