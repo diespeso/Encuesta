@@ -75,6 +75,7 @@
     <Compile Include="Menu-Admin.Designer.cs">
       <DependentUpon>Menu-Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\QuizModel.cs" />
     <Compile Include="Nueva pregunta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +88,7 @@
     <Compile Include="NuevoDispositivo.Designer.cs">
       <DependentUpon>NuevoDispositivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\QuizRepository.cs" />
     <Compile Include="ThankYou.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,5 +189,6 @@
   <ItemGroup>
     <None Include="silueta-de-estrella-dorada.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
