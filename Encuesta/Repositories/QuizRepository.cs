@@ -136,7 +136,23 @@ namespace Encuesta.Repositories
 
         public void Delete(int quizId)
         {
-
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(_connectionString))
+                {
+                    string sql = "delete from quiz where quizId = @quizId;";
+                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@quizId", quizId);
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
         }
     }
 }
