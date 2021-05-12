@@ -25,7 +25,7 @@ namespace Encuesta.ENTIDADES
         }
     }
 
-    class ANSWEREDQUIZDETAILS_REPOSITORY : answeredquizdetailscrud
+    class ANSWEREDQUIZDETAIL_REPOSITORY : answeredquizdetailscrud
     {
 
         public string aid { set; get; }
