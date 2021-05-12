@@ -81,6 +81,12 @@
     <Compile Include="NuevoDispositivo.Designer.cs">
       <DependentUpon>NuevoDispositivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\AnsweredquizdetailsRepository.cs" />
+    <Compile Include="Repositories\AnsweredquizRepository.cs" />
+    <Compile Include="Repositories\AnswersgroupReposiroty.cs" />
+    <Compile Include="Repositories\AnswersRepository.cs" />
+    <Compile Include="Repositories\PermitsRepository.cs" />
+    <Compile Include="Repositories\QuestionsRepository.cs" />
     <Compile Include="Repositories\QuizRepository.cs" />
     <Compile Include="ThankYou.cs">
       <SubType>Form</SubType>
