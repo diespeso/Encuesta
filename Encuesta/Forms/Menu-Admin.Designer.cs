@@ -117,7 +117,7 @@ namespace Encuesta
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Image = global::Encuesta.Properties.Resources.icons8_business_report_100;
+            this.button1.Image = global::Encuesta.Properties.Resources.quiz;
             this.button1.Location = new System.Drawing.Point(12, 415);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 100);

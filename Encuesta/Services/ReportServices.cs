@@ -18,35 +18,43 @@ namespace Encuesta.Services
 
             List<QuizReportDto> quizResults = _quizRepository.GetQuizResultsByYearAndMonth(year, monthNumber, quizId);
 
-            var answeredQuestion = quizResults.GroupBy(x => x.QuestionId).ToList();
-
-            foreach (var question in answeredQuestion)
+            if (quizResults != null)
             {
-                var questionResults = quizResults.Where(x => x.QuestionId == question.First().QuestionId);
+                var answeredQuestion = quizResults.GroupBy(x => x.QuestionId).ToList();
 
-                Dictionary<Respuesta.RespuestaCualitativa, int> diccionarioResultados =
-                    new Dictionary<Respuesta.RespuestaCualitativa, int>();
-
-                int answerCount = 0;
-                foreach (var questionResult in questionResults)
+                foreach (var question in answeredQuestion)
                 {
-                    diccionarioResultados.Add(GetRespuestaCualitativa(questionResult.Answer), questionResult.Quantity);
-                    answerCount++;
-                }
+                    var questionResults = quizResults.Where(x => x.QuestionId == question.First().QuestionId);
 
-                if (answerCount < 5)
-                {
-                    foreach (Respuesta.RespuestaCualitativa respuestaCualitativa in Enum.GetValues(typeof(Respuesta.RespuestaCualitativa)).Cast<Respuesta.RespuestaCualitativa>())
+                    Dictionary<Respuesta.RespuestaCualitativa, int> diccionarioResultados =
+                        new Dictionary<Respuesta.RespuestaCualitativa, int>();
+
+                    int answerCount = 0;
+                    foreach (var questionResult in questionResults)
                     {
-                        if (!diccionarioResultados.ContainsKey(respuestaCualitativa))
+                        diccionarioResultados.Add(GetRespuestaCualitativa(questionResult.Answer), questionResult.Quantity);
+                        answerCount++;
+                    }
+
+                    if (answerCount < 5)
+                    {
+                        foreach (Respuesta.RespuestaCualitativa respuestaCualitativa in Enum.GetValues(typeof(Respuesta.RespuestaCualitativa)).Cast<Respuesta.RespuestaCualitativa>())
                         {
-                            diccionarioResultados.Add(respuestaCualitativa,0);
+                            if (!diccionarioResultados.ContainsKey(respuestaCualitativa))
+                            {
+                                diccionarioResultados.Add(respuestaCualitativa, 0);
+                            }
                         }
                     }
-                }
 
-                resultados.Add(new Tuple<string, Dictionary<Respuesta.RespuestaCualitativa, int>>(question.First().Question,diccionarioResultados));
+                    resultados.Add(new Tuple<string, Dictionary<Respuesta.RespuestaCualitativa, int>>(question.First().Question, diccionarioResultados));
+                }
             }
+            else
+            {
+                throw new NullReferenceException("No hay datos para la encuesta");
+            }
+            
 
             return resultados;
         }

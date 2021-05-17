@@ -147,9 +147,20 @@ namespace Encuesta
 
             KeyValuePair<int, string> selectedQuiz = (KeyValuePair<int, string>) combo_encuestas.SelectedItem;
 
-            resultados = _reportService.GetQuizResultsByMonthAndYear(anio, GetSelectedMonthNumber(), selectedQuiz.Key);
-            //resultados = ConsultarEncuesta(combo_encuestas.SelectedItem.ToString());
-            CargarResultadosActuales();
+            try
+            {
+                resultados =
+                    _reportService.GetQuizResultsByMonthAndYear(anio, GetSelectedMonthNumber(), selectedQuiz.Key);
+                CargarResultadosActuales();
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         int GetSelectedMonthNumber()

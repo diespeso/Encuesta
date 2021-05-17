@@ -66,6 +66,7 @@ namespace Encuesta
             // 
             // btn_siguiente
             // 
+            this.btn_siguiente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_siguiente.Location = new System.Drawing.Point(713, 415);
             this.btn_siguiente.Name = "btn_siguiente";
             this.btn_siguiente.Size = new System.Drawing.Size(75, 23);
@@ -76,6 +77,7 @@ namespace Encuesta
             // 
             // btn_anterior
             // 
+            this.btn_anterior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_anterior.Location = new System.Drawing.Point(12, 415);
             this.btn_anterior.Name = "btn_anterior";
             this.btn_anterior.Size = new System.Drawing.Size(75, 23);
@@ -190,6 +192,7 @@ namespace Encuesta
             this.Controls.Add(this.btn_siguiente);
             this.Controls.Add(this.elementHost2);
             this.Controls.Add(this.elementHost1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReporteMes";
             this.Text = "ReporteMes";
             this.ResumeLayout(false);
