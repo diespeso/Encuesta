@@ -1,121 +1,122 @@
+drop database if exists encuesta;
 create database Encuesta;
 use Encuesta;
 
 /*TEMPLATES*/
 
-create table answersGroup
+create table answerGroup
 (
-answerGroupId INT primary key,
+answerGroupId INT primary key auto_increment,
 answerGroupName VARCHAR(50)
 );
 
-create table answers
+create table answer
 (
-answerId INT primary key,
+answerId int primary key auto_increment,
 answerGroupId int,
 answer VARCHAR(50),
-foreign key (answerGroupId) references answersGroup(answerGroupId)
+foreign key (answerGroupId) references answerGroup(answerGroupId)
 );
 
-create table questions
+create table question
 (
-questionId INT primary key,
+questionId INT primary key auto_increment,
 answerGroupId INT,
 question VARCHAR(70),
-foreign key (answerGroupId) references answersGroup(answerGroupId)
+foreign key (answerGroupId) references answerGroup(answerGroupId)
 );
 
 create table quiz
 (
-quizId INT primary key,
+quizId INT primary key auto_increment,
 quizName VARCHAR(50)
 );
 
 
-create table quiz_has_questions
+create table quiz_has_question
 (
 questionId INT,
 quizId INT,
 primary key (questionId,quizId),
-foreign key (questionId) references questions(questionId),
+foreign key (questionId) references question(questionId),
 foreign key (quizId) references quiz(quizId)
 );
 
 
 /*QUIZZES*/
 
-create table quizDevices
+create table quizDevice
 (
-quizDeviceId INT primary key,
+quizDeviceId INT primary key auto_increment,
 quizToApply INT,
 quizDeviceName VARCHAR(30),
 quizDeviceLocation varchar(45),
-dateCreated DATE,
-foreign key (quizToApply) references quiz (quizId)
+dateCreated datetime default now(),
+foreign key (quizToApply) references quiz(quizId)
 );
 
 create table answeredQuiz
 (
-answeredQuizId INT primary key,
+answeredQuizId INT primary key auto_increment,
 quizDeviceId INT,
 creationDate DATE,
-foreign key (quizDeviceId) references quizDevices(quizDeviceId)
+foreign key (quizDeviceId) references quizDevice(quizDeviceId)
 );
 
-create table answeredQuizDetails
+create table answeredQuizDetail
 (
 answerId  INT,
 questionId INT,
 answeredQuizId INT,
-elasedTime time,
+elapsedTime time,
 PRIMARY KEY (answeredQuizId, questionId),
-foreign key (answerId) references answers(answerId),
-foreign KEY (questionId) references questions(questionId),
+foreign key (answerId) references answer(answerId),
+foreign KEY (questionId) references question(questionId),
 foreign KEY (answeredQuizId) references answeredQuiz(answeredQuizId)
 );
 
 
 /*USER PERMITS*/
-create table userRoles
+create table userRole
 (
-userRoleId INT primary key,
+userRoleId INT primary key auto_increment,
 roleName VARCHAR(60)
 );
 
-create table users
+create table user
 (
-userId INT ,
+userId INT primary key auto_increment,
 roleId INT,
 userName VARCHAR (60),
-contrasena VARCHAR(15),
-foreign key (roleId) references userRoles(userRoleId)
+password VARCHAR(15),
+foreign key (roleId) references userRole(userRoleId)
 );
 
-create table  permits
+create table  permit
 (
-permitId INT primary key,
+permitId INT primary key auto_increment,
 permitName VARCHAR(20)
 );
 
-create table userRoles_has_permits
+create table userRole_has_permit
 (
 userRoleId INT,
 permitId INT,
 permitAllowed TINYINT(1),
-foreign key (userRoleId) references userRoles(userRoleId),
-foreign key (permitId) references permits(permitId),
+foreign key (userRoleId) references userRole(userRoleId),
+foreign key (permitId) references permit(permitId),
 check (permitAllowed = 0 or permitAllowed = 1)
 );
 
 /** 
 Datos por defecto
 **/
-insert into answersgroup 
+insert into answergroup 
 values 
 (1,'Face icons'),
 (2,'Star icons');
 
-insert into answers 
+insert into answer 
 values 
 (1,1,'[icon:face1]'),
 (2,1,'[icon:face2]'),
@@ -130,36 +131,36 @@ values
 
 insert into quiz 
 values 
-(1,'Encuesta de satisfacción'),
+(1,'Encuesta de satisfacci�n'),
 (2,'Encuesta de limpieza');
 
-insert into questions 
+insert into question 
 values
 (1,2,'Como califica nuestros servicios'),
 (2,2,'Como valora la calidad de nuestros productos'),
 (3,2,'Como califica la limpieza de los baños'),
 (4,2,'Como califica la limpieza de la recepción');
 
-insert into quiz_has_questions 
+insert into quiz_has_question 
 values 
 (1,1),
 (2,1),
 (3,2),
 (4,2);
 
-insert into quizdevices 
+insert into quizdevice 
 values
-(1,1,'Dipositivo 1','Recepción',now()),
-(2,2,'Dipositivo 2','Tienda',now());
+(1,1,'Dipositivo 1','Recepci�n',CURRENT_TIMESTAMP),
+(2,2,'Dipositivo 2','Tienda',CURRENT_TIMESTAMP);
 
 -- Consultar preguntas a realizar en el dispotivio cliente
-select q.questionId, q.question, q.answerGroupId from questions q
-inner join quiz_has_questions qhq on q.questionId = qhq.questionId 
+select q.questionId, q.question, q.answerGroupId from question q
+inner join quiz_has_question qhq on q.questionId = qhq.questionId 
 inner join quiz on quiz.quizId = qhq.quizId 
-inner join quizdevices device on device.quizToApply = quiz.quizId 
+inner join quizdevice device on device.quizToApply = quiz.quizId 
 where device.quizDeviceId = 2;
 
 -- Consultar las respuestas por cada pregunta
-select a.answerId, a.answer from answers a 
-inner join answersgroup ag on a.answerGroupId = ag.answerGroupId 
+select a.answerId, a.answer from answer a 
+inner join answergroup ag on a.answerGroupId = ag.answerGroupId 
 where ag.answerGroupId = 2;
