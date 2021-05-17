@@ -164,3 +164,25 @@ where device.quizDeviceId = 2;
 select a.answerId, a.answer from answer a 
 inner join answergroup ag on a.answerGroupId = ag.answerGroupId 
 where ag.answerGroupId = 2;
+
+-- Consulta de resultados por encuesta
+select a.answerId, a.answer, q.questionId, q.question , count(*) as quantity from answeredquizdetail aqd
+inner join answeredquiz aq on aqd.answeredQuizId = aq.answeredQuizId 
+inner join quiz_has_question qhq on qhq.questionId = aqd.questionId 
+inner join question q on q.questionId = aqd.questionId 
+inner join answer a on aqd.answerId = a.answerId 
+where 
+year(aq.creationDate) = 2021 
+and month(aq.creationDate) = 05
+and qhq.quizId = 1
+group by questionId, answerId 
+
+select aqd.* from answeredquizdetail aqd
+inner join answeredquiz aq on aqd.answeredQuizId = aq.answeredQuizId 
+inner join quiz_has_question qhq on qhq.questionId = aqd.questionId 
+where 
+year(aq.creationDate) = 2021 
+and month(aq.creationDate) = 05
+and qhq.quizId = 1
+
+

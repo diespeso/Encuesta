@@ -163,6 +163,12 @@ namespace Encuesta.Services
             }
         }
 
+        public List<KeyValuePair<int, String>> GetQuizKeyValuePair()
+        { 
+            List<QuizModel> quizList = quizRepository.GetAll().ToList();
+            return quizList.ToDictionary(x => x.QuizId, x => x.QuizName).ToList();
+        }
+
         public void SaveAnsweredQuiz(IEnumerable<Pregunta> preguntas, int deviceId)
         {
             using (TransactionScope scope = new TransactionScope())

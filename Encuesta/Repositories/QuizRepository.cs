@@ -194,5 +194,60 @@ namespace Encuesta.Repositories
                 throw new Exception(ex.Message, ex);
             }
         }
+
+        public List<QuizReportDto> GetQuizResultsByYearAndMonth(int year, int monthNumber, int quizId)
+        {
+            List<QuizReportDto> list;
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(_connectionString))
+                {
+                    string sql = @"select a.answerId, a.answer, q.questionId, q.question , count(*) as quantity from answeredquizdetail aqd
+                    inner join answeredquiz aq on aqd.answeredQuizId = aq.answeredQuizId
+                    inner join quiz_has_question qhq on qhq.questionId = aqd.questionId
+                    inner join question q on q.questionId = aqd.questionId
+                    inner join answer a on aqd.answerId = a.answerId
+                    where
+                    year(aq.creationDate) = @year
+                    and month(aq.creationDate) = @monthNumber
+                    and qhq.quizId = @quizId
+                    group by questionId, answerId;";
+
+                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                    {
+                        list = new List<QuizReportDto>();
+                        cmd.Parameters.AddWithValue("@year", year);
+                        cmd.Parameters.AddWithValue("@monthNumber", monthNumber);
+                        cmd.Parameters.AddWithValue("@quizId", quizId);
+                        con.Open();
+                        using (MySqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.HasRows)
+                            {
+                                while (dr.Read())
+                                {
+                                    list.Add(new QuizReportDto()
+                                    {
+                                        AnswerId = Convert.ToInt32(dr["answerId"]),
+                                        Answer = dr["answer"].ToString(),
+                                        QuestionId = Convert.ToInt32(dr["questionId"]),
+                                        Question = dr["question"].ToString(),
+                                        Quantity = Convert.ToInt32(dr["quantity"])
+                                    });
+                                }
+
+                                return list;
+                            }
+                            else
+                                return null;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
     }
 }

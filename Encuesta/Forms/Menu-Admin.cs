@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Encuesta.Services;
 
 namespace Encuesta
 {
     public partial class Menu_Admin : Form
     {
+        private QuizServices _quizServices = new QuizServices();
         public Menu_Admin()
         {
             InitializeComponent();
@@ -40,6 +42,11 @@ namespace Encuesta
         {
             DemoKiosko demo = new DemoKiosko("Dispositivo 1");
             demo.Show();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            Program.SetMainPanelForm(new ReporteMes(_quizServices.GetQuizKeyValuePair()));
         }
     }
 }

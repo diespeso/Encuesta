@@ -87,6 +87,7 @@ namespace Encuesta
             this.btnReports.Size = new System.Drawing.Size(100, 100);
             this.btnReports.TabIndex = 12;
             this.btnReports.UseVisualStyleBackColor = true;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // button5
             // 
