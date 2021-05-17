@@ -1,7 +1,7 @@
 ﻿
 namespace Encuesta
 {
-    partial class Form1
+    partial class DemoKiosko
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -42,14 +42,16 @@ namespace Encuesta
             this.label1.Text = "PANTALLA DE BIENVENIDA";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Form1
+            // DemoKiosko
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "DemoKiosko";
+            this.ShowIcon = false;
+            this.Text = "Demo Kiosko";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Click += new System.EventHandler(this.ComenzarAPreguntar);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -36,21 +36,24 @@ namespace Encuesta
             this.estrella_3 = new System.Windows.Forms.PictureBox();
             this.estrella_4 = new System.Windows.Forms.PictureBox();
             this.estrella_5 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.estrella_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estrella_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estrella_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estrella_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estrella_5)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(273, 165);
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(2, 15);
+            this.label1.Size = new System.Drawing.Size(776, 131);
             this.label1.TabIndex = 1;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextChanged += new System.EventHandler(this.label1_TextChanged);
             // 
             // estrella_1
             // 
@@ -107,19 +110,28 @@ namespace Encuesta
             this.estrella_5.TabStop = false;
             this.estrella_5.Click += new System.EventHandler(this.OnEstrellaCalificada);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(12, 135);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(776, 131);
+            this.panel1.TabIndex = 7;
+            // 
             // GUI_Pregunta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.estrella_5);
             this.Controls.Add(this.estrella_4);
             this.Controls.Add(this.estrella_3);
             this.Controls.Add(this.estrella_2);
             this.Controls.Add(this.estrella_1);
-            this.Controls.Add(this.label1);
             this.Name = "GUI_Pregunta";
-            this.Text = "GUI_Pregunta";
+            this.ShowIcon = false;
+            this.Text = "Demo Kiosko";
             this.Load += new System.EventHandler(this.GUI_Pregunta_Load);
             this.Click += new System.EventHandler(this.button1_Click);
             ((System.ComponentModel.ISupportInitialize)(this.estrella_1)).EndInit();
@@ -127,8 +139,8 @@ namespace Encuesta
             ((System.ComponentModel.ISupportInitialize)(this.estrella_3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estrella_4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estrella_5)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -139,5 +151,6 @@ namespace Encuesta
         private System.Windows.Forms.PictureBox estrella_3;
         private System.Windows.Forms.PictureBox estrella_4;
         private System.Windows.Forms.PictureBox estrella_5;
+        private System.Windows.Forms.Panel panel1;
     }
 }

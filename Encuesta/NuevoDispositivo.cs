@@ -18,12 +18,5 @@ namespace Encuesta
             string nombre;
             nombre = txtnombredispositivo.Text;
         }
-       
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SeleccionarEncuesta frmselec = new SeleccionarEncuesta();
-            frmselec.Show();
-            this.Hide();
-        }
     }
 }

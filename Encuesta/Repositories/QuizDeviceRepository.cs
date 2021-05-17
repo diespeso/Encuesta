@@ -4,32 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Encuesta.Models;
-using Encuesta.Models.Dto;
-using MySql.Data;
 using MySql.Data.MySqlClient;
 
 namespace Encuesta.Repositories
 {
-    public class QuizRepository : RepositoryBase
+    public class QuizDeviceRepository : RepositoryBase
     {
-        public QuizRepository(string connectionString)
+        public QuizDeviceRepository(string connectionString)
         {
             _connectionString = connectionString;
         }
 
-        public void Add(QuizModel quizModel)
+        public void Add(QuizDeviceModel model)
         {
             try
             {
                 using (MySqlConnection con = new MySqlConnection(_connectionString))
                 {
-                    string sql = "insert into quiz(quizName) values(@quizName);";
+                    string sql = "INSERT INTO encuesta.quizdevice (quizToApplyId, quizDeviceName, quizDeviceLocation, dateCreated) " +
+                                 "VALUES(@quizToApplyId, @quizDeviceName, @quizDeviceLocation, CURRENT_TIMESTAMP);";
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
-                        cmd.Parameters.AddWithValue("@quizName", quizModel.QuizName);
+                        cmd.Parameters.AddWithValue("@quizToApplyId", model.QuizToApplyId);
+                        cmd.Parameters.AddWithValue("@quizDeviceName", model.QuizDeviceName);
+                        cmd.Parameters.AddWithValue("@quizDeviceLocation", model.QuizDeviceLocation);
                         con.Open();
                         cmd.ExecuteNonQuery();
-                        quizModel.QuizId = Convert.ToInt32(cmd.LastInsertedId);
+                        model.QuizDeviceId = Convert.ToInt32(cmd.LastInsertedId);
                     }
                 }
             }
@@ -39,17 +40,19 @@ namespace Encuesta.Repositories
             }
         }
 
-        public void Update(QuizModel quizModel)
+        public void Update(QuizDeviceModel model)
         {
             try
             {
                 using (MySqlConnection con = new MySqlConnection(_connectionString))
                 {
-                    string sql = "update quiz set quizName = @quizName where quizId = @quizId;";
+                    string sql = "UPDATE encuesta.quizdevice SET quizToApplyId=@quizToApplyId, quizDeviceName=@quizDeviceName, quizDeviceLocation=@quizDeviceLocation WHERE quizDeviceId=@quizDeviceId;";
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
-                        cmd.Parameters.AddWithValue("@quizName", quizModel.QuizName);
-                        cmd.Parameters.AddWithValue("@quizId", quizModel.QuizId);
+                        cmd.Parameters.AddWithValue("@quizToApplyId", model.QuizToApplyId);
+                        cmd.Parameters.AddWithValue("@quizDeviceName", model.QuizDeviceName);
+                        cmd.Parameters.AddWithValue("@quizDeviceLocation", model.QuizDeviceLocation);
+                        cmd.Parameters.AddWithValue("@quizDeviceId", model.QuizDeviceId);
                         con.Open();
                         cmd.ExecuteNonQuery();
                     }
@@ -61,28 +64,33 @@ namespace Encuesta.Repositories
             }
         }
 
-        public QuizModel Get(int quizId)
+        public QuizDeviceModel Get(int quizDeviceId)
         {
-            QuizModel item;
+            QuizDeviceModel item;
             try
             {
                 using (MySqlConnection con = new MySqlConnection(_connectionString))
                 {
-                    string sql = "select * from quiz where quizId = @quizId;";
+                    string sql = "SELECT quizDeviceId, quizToApplyId, quizDeviceName, quizDeviceLocation, dateCreated FROM quizdevice WHERE quizDeviceId = @quizDeviceId;";
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
-                        cmd.Parameters.AddWithValue("@quizId", quizId);
+                        cmd.Parameters.AddWithValue("@quizDeviceId", quizDeviceId);
                         con.Open();
                         using (MySqlDataReader dr = cmd.ExecuteReader())
                         {
-                            if(dr.HasRows)
+                            item = new QuizDeviceModel();
+                            if (dr.HasRows)
                                 while (dr.Read())
                                 {
-                                    item = new QuizModel();
-                                    item.QuizId = Convert.ToInt32(dr["quizId"]);
-                                    item.QuizName = dr["quizName"].ToString();
+                                    item = new QuizDeviceModel();
+                                    item.QuizDeviceId = Convert.ToInt32(dr["quizDeviceId"]);
+                                    item.QuizToApplyId = Convert.ToInt32(dr["quizToApplyId"].ToString());
+                                    item.QuizDeviceName = dr["quizDeviceName"].ToString();
+                                    item.DateCreated = Convert.ToDateTime(dr["dateCreated"]);
                                     return item;
                                 }
+                            else
+                                return null;
                         }
                     }
                 }
@@ -95,17 +103,57 @@ namespace Encuesta.Repositories
             return null;
         }
 
-        public IEnumerable<QuizModel> GetAll()
+        public QuizDeviceModel GetByName(string quizDeviceName)
         {
-            List<QuizModel> list;
+            QuizDeviceModel item;
             try
             {
                 using (MySqlConnection con = new MySqlConnection(_connectionString))
                 {
-                    string sql = "select * from quiz;";
+                    string sql = "SELECT quizDeviceId, quizToApplyId, quizDeviceName, quizDeviceLocation, dateCreated FROM quizdevice WHERE quizDeviceName = @quizDeviceName;";
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
-                        list = new List<QuizModel>();
+                        cmd.Parameters.AddWithValue("@quizDeviceName", quizDeviceName);
+                        con.Open();
+                        using (MySqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            item = new QuizDeviceModel();
+                            if (dr.HasRows)
+                                while (dr.Read())
+                                {
+                                    item = new QuizDeviceModel();
+                                    item.QuizDeviceId = Convert.ToInt32(dr["quizDeviceId"]);
+                                    item.QuizToApplyId = Convert.ToInt32(dr["quizToApplyId"].ToString());
+                                    item.QuizDeviceName = dr["quizDeviceName"].ToString();
+                                    item.DateCreated = Convert.ToDateTime(dr["dateCreated"]);
+                                    return item;
+                                }
+                            else
+                                return null;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return null;
+        }
+
+
+        public IEnumerable<QuizDeviceModel> GetAll()
+        {
+            List<QuizDeviceModel> list;
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(_connectionString))
+                {
+                    string sql = "SELECT quizDeviceId, quizToApplyId, quizDeviceName, quizDeviceLocation, dateCreated FROM quizdevice;";
+                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                    {
+                        list = new List<QuizDeviceModel>();
                         con.Open();
                         using (MySqlDataReader dr = cmd.ExecuteReader())
                         {
@@ -113,11 +161,13 @@ namespace Encuesta.Repositories
                             {
                                 while (dr.Read())
                                 {
-                                    list.Add(new QuizModel()
+                                    list.Add(new QuizDeviceModel()
                                     {
-                                        QuizId = Convert.ToInt32(dr["quizId"]),
-                                        QuizName = dr["quizName"].ToString()
-                                    });
+                                        QuizDeviceId = Convert.ToInt32(dr["quizDeviceId"]),
+                                        QuizToApplyId = Convert.ToInt32(dr["quizToApplyId"].ToString()),
+                                        QuizDeviceName = dr["quizDeviceName"].ToString(),
+                                        DateCreated = Convert.ToDateTime(dr["dateCreated"])
+                                });
                                 }
 
                                 return list;
@@ -134,55 +184,16 @@ namespace Encuesta.Repositories
             }
         }
 
-        public List<QuizDto> GetMainView()
-        {
-            List<QuizDto> list;
-            try
-            {
-                using (MySqlConnection con = new MySqlConnection(_connectionString))
-                {
-                    string sql = "select * from quiz;";
-                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
-                    {
-                        list = new List<QuizDto>();
-                        con.Open();
-                        using (MySqlDataReader dr = cmd.ExecuteReader())
-                        {
-                            if (dr.HasRows)
-                            {
-                                while (dr.Read())
-                                {
-                                    list.Add(new QuizDto()
-                                    {
-                                        QuizId = Convert.ToInt32(dr["quizId"]),
-                                        Name = dr["quizName"].ToString()
-                                    });
-                                }
-
-                                return list;
-                            }
-                            else
-                                return null;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message, ex);
-            }
-        }
-
-        public bool Delete(int quizId)
+        public bool Delete(int quizDeviceId)
         {
             try
             {
                 using (MySqlConnection con = new MySqlConnection(_connectionString))
                 {
-                    string sql = "delete from quiz where quizId = @quizId;";
+                    string sql = "DELETE FROM quizDevice WHERE quizDeviceId=@quizDeviceId;";
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
-                        cmd.Parameters.AddWithValue("@quizId", quizId);
+                        cmd.Parameters.AddWithValue("@quizDeviceId", quizDeviceId);
                         con.Open();
                         cmd.ExecuteNonQuery();
                         return true;

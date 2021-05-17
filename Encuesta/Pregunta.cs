@@ -10,10 +10,11 @@ namespace Encuesta
 {
     public class Pregunta
     {
+        public int IdPregunta { get; set; }
         private String pregunta;
         private RespuestaCualitativa respuesta;
 
-        public Pregunta(String pregunta)
+        public Pregunta(int idPregunta, String pregunta)
         {
             this.pregunta = pregunta;
             this.respuesta = RespuestaCualitativa.INVALIDO;
@@ -42,7 +43,7 @@ namespace Encuesta
 
         public String GetPreguntaTextual()
         {
-            return this.pregunta;
+            return "¿" + this.pregunta+"?";
         }
 
         public override string ToString()

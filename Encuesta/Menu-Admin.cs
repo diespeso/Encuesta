@@ -15,6 +15,14 @@ namespace Encuesta
         public Menu_Admin()
         {
             InitializeComponent();
+            Program.SetMainPanel(this.mainPanel);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Closing += Menu_Admin_Closing;
+        }
+
+        private void Menu_Admin_Closing(object sender, CancelEventArgs e)
+        {
+            this.DialogResult = DialogResult.Abort;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -23,10 +31,15 @@ namespace Encuesta
             nuevoDispositivo.Show();
         }
 
-        private void cmdSubirEncuesta_Click(object sender, EventArgs e)
+        private void cmdNuevaEncuesta_Click(object sender, EventArgs e)
         {
-            SeleccionarEncuesta seleccionarEncuesta = new SeleccionarEncuesta();
-            seleccionarEncuesta.Show();
+            Program.SetMainPanelForm(new QuizMainView());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DemoKiosko demo = new DemoKiosko("Dispositivo 1");
+            demo.Show();
         }
     }
 }

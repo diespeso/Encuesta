@@ -44,9 +44,9 @@ namespace Encuesta
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(262, 351);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 60);
+            this.button1.Size = new System.Drawing.Size(120, 39);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Siguiente";
+            this.button1.Text = "Ingresar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

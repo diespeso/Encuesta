@@ -17,6 +17,7 @@ namespace Encuesta
         {
             InitializeComponent();
             this.retorno = retorno;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private async void Agradecimiento_Load(object sender, EventArgs e)

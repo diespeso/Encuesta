@@ -7,38 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Encuesta.Models.Dto;
 
 namespace Encuesta
 {
     public partial class Nueva_pregunta : Form
     {
+        private QuestionDto _question = new QuestionDto();
         public Nueva_pregunta()
         {
             InitializeComponent();
-            string pregunta;
-            pregunta = txtpregunta.Text;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtnombredispositivo_TextChanged(object sender, EventArgs e)
-        {
-
+            this.StartPosition = FormStartPosition.CenterParent;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            NuevoDispositivo frmselec = new NuevoDispositivo();
-            frmselec.Show();
-            this.Hide();
+            _question.Question = txtQuestion.Text;
+            this.DialogResult = DialogResult.OK;
         }
 
-        private void Nueva_pregunta_Load(object sender, EventArgs e)
+        public QuestionDto GetNewQuestion()
         {
-
+            return _question;
         }
     }
 }

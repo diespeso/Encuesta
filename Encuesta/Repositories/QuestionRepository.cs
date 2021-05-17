@@ -4,32 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Encuesta.Models;
-using Encuesta.Models.Dto;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
 namespace Encuesta.Repositories
 {
-    public class QuizRepository : RepositoryBase
+    public class QuestionRepository : RepositoryBase
     {
-        public QuizRepository(string connectionString)
+        public QuestionRepository(string connectionString)
         {
             _connectionString = connectionString;
         }
 
-        public void Add(QuizModel quizModel)
+        public void Add(QuestionModel questionModel)
         {
             try
             {
                 using (MySqlConnection con = new MySqlConnection(_connectionString))
                 {
-                    string sql = "insert into quiz(quizName) values(@quizName);";
+                    string sql = "INSERT INTO question (answerGroupId, question) VALUES(@answerGroupId, @question);";
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
-                        cmd.Parameters.AddWithValue("@quizName", quizModel.QuizName);
+                        cmd.Parameters.AddWithValue("@answerGroupId", questionModel.AnswerGroupId);
+                        cmd.Parameters.AddWithValue("@question", questionModel.Question);
                         con.Open();
                         cmd.ExecuteNonQuery();
-                        quizModel.QuizId = Convert.ToInt32(cmd.LastInsertedId);
+                        questionModel.QuestionId = Convert.ToInt32(cmd.LastInsertedId);
                     }
                 }
             }
@@ -39,17 +39,19 @@ namespace Encuesta.Repositories
             }
         }
 
-        public void Update(QuizModel quizModel)
+        public void Update(QuestionModel questionModel)
         {
             try
             {
                 using (MySqlConnection con = new MySqlConnection(_connectionString))
                 {
-                    string sql = "update quiz set quizName = @quizName where quizId = @quizId;";
+                    string sql = "UPDATE question SET answerGroupId=@answerGroupId, question=@question WHERE questionId=@questionId;";
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
-                        cmd.Parameters.AddWithValue("@quizName", quizModel.QuizName);
-                        cmd.Parameters.AddWithValue("@quizId", quizModel.QuizId);
+                        cmd.Parameters.AddWithValue("@questionId", questionModel.QuestionId);
+                        cmd.Parameters.AddWithValue("@question", questionModel.Question);
+                        cmd.Parameters.AddWithValue("@answerGroupId", questionModel.AnswerGroupId);
+
                         con.Open();
                         cmd.ExecuteNonQuery();
                     }
@@ -61,26 +63,27 @@ namespace Encuesta.Repositories
             }
         }
 
-        public QuizModel Get(int quizId)
+        public QuestionModel Get(int questionId)
         {
-            QuizModel item;
+            QuestionModel item;
             try
             {
                 using (MySqlConnection con = new MySqlConnection(_connectionString))
                 {
-                    string sql = "select * from quiz where quizId = @quizId;";
+                    string sql = "SELECT questionId, answerGroupId, question FROM question where questionId = @questionId;";
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
-                        cmd.Parameters.AddWithValue("@quizId", quizId);
+                        cmd.Parameters.AddWithValue("@questionId", questionId);
                         con.Open();
                         using (MySqlDataReader dr = cmd.ExecuteReader())
                         {
                             if(dr.HasRows)
                                 while (dr.Read())
                                 {
-                                    item = new QuizModel();
-                                    item.QuizId = Convert.ToInt32(dr["quizId"]);
-                                    item.QuizName = dr["quizName"].ToString();
+                                    item = new QuestionModel();
+                                    item.AnswerGroupId = Convert.ToInt32(dr["questionId"]);
+                                    item.AnswerGroupId = Convert.ToInt32(dr["answeGroupId"]);
+                                    item.Question = dr["question"].ToString();
                                     return item;
                                 }
                         }
@@ -95,17 +98,17 @@ namespace Encuesta.Repositories
             return null;
         }
 
-        public IEnumerable<QuizModel> GetAll()
+        public IEnumerable<QuestionModel> GetAll()
         {
-            List<QuizModel> list;
+            List<QuestionModel> list;
             try
             {
                 using (MySqlConnection con = new MySqlConnection(_connectionString))
                 {
-                    string sql = "select * from quiz;";
+                    string sql = "SELECT questionId, answerGroupId, question FROM question;";
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
-                        list = new List<QuizModel>();
+                        list = new List<QuestionModel>();
                         con.Open();
                         using (MySqlDataReader dr = cmd.ExecuteReader())
                         {
@@ -113,10 +116,12 @@ namespace Encuesta.Repositories
                             {
                                 while (dr.Read())
                                 {
-                                    list.Add(new QuizModel()
+                                    list.Add(new QuestionModel()
                                     {
-                                        QuizId = Convert.ToInt32(dr["quizId"]),
-                                        QuizName = dr["quizName"].ToString()
+                                        QuestionId = Convert.ToInt32(dr["questionId"]),
+                                        AnswerGroupId = Convert.ToInt32(dr["answerGroupId"].ToString()),
+                                        Question = dr["question"].ToString()
+
                                     });
                                 }
 
@@ -134,55 +139,60 @@ namespace Encuesta.Repositories
             }
         }
 
-        public List<QuizDto> GetMainView()
+        public IEnumerable<QuestionModel> GetByQuizId(int quizId)
         {
-            List<QuizDto> list;
+            List<QuestionModel> list;
             try
             {
                 using (MySqlConnection con = new MySqlConnection(_connectionString))
                 {
-                    string sql = "select * from quiz;";
+                    string sql = "SELECT q.questionId, q.answerGroupId, q.question FROM question q " +
+                                 "INNER JOIN quiz_has_question qhq ON q.questionId = qhq.questionId " +
+                                 "WHERE qhq.quizId = @quizId;";
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
-                        list = new List<QuizDto>();
+                        list = new List<QuestionModel>();
                         con.Open();
-                        using (MySqlDataReader dr = cmd.ExecuteReader())
-                        {
-                            if (dr.HasRows)
-                            {
-                                while (dr.Read())
-                                {
-                                    list.Add(new QuizDto()
-                                    {
-                                        QuizId = Convert.ToInt32(dr["quizId"]),
-                                        Name = dr["quizName"].ToString()
-                                    });
-                                }
-
-                                return list;
-                            }
-                            else
-                                return null;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message, ex);
-            }
-        }
-
-        public bool Delete(int quizId)
-        {
-            try
-            {
-                using (MySqlConnection con = new MySqlConnection(_connectionString))
-                {
-                    string sql = "delete from quiz where quizId = @quizId;";
-                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
-                    {
                         cmd.Parameters.AddWithValue("@quizId", quizId);
+                        using (MySqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.HasRows)
+                            {
+                                while (dr.Read())
+                                {
+                                    list.Add(new QuestionModel()
+                                    {
+                                        QuestionId = Convert.ToInt32(dr["questionId"]),
+                                        AnswerGroupId = Convert.ToInt32(dr["answerGroupId"].ToString()),
+                                        Question = dr["question"].ToString()
+
+                                    });
+                                }
+
+                                return list;
+                            }
+                            else
+                                return null;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+        }
+
+        public bool Delete(int questionId)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(_connectionString))
+                {
+                    string sql = "DELETE FROM question WHERE questionId=@questionId;";
+                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@questionId", questionId);
                         con.Open();
                         cmd.ExecuteNonQuery();
                         return true;
