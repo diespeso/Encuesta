@@ -32,5 +32,11 @@ namespace Encuesta.Services
 
             return lstPreguntas;
         }
+
+        public int GetDeviceId(string quizDeviceName)
+        {
+            QuizDeviceModel device = _quizDeviceRepository.GetByName(quizDeviceName);
+            return device.QuizDeviceId;
+        }
     }
 }

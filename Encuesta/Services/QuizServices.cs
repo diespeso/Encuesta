@@ -17,6 +17,12 @@ namespace Encuesta.Services
         private QuestionRepository questionRepository = new QuestionRepository(Program.GetConnectionString());
         private QuizHasQuestionsRepository quizHasQuestionsRepository = new QuizHasQuestionsRepository(Program.GetConnectionString());
 
+        private AnsweredQuizRepository answeredQuizRepository =
+            new AnsweredQuizRepository(Program.GetConnectionString());
+
+        private AnsweredQuizDetailRepository answeredQuizDetailRepository =
+            new AnsweredQuizDetailRepository(Program.GetConnectionString());
+
         public void SaveQuiz(QuizDto quiz)
         {
             ValidateQuiz(quiz);
@@ -154,6 +160,54 @@ namespace Encuesta.Services
             if (quiz.Questions.Count() == 0)
             {
                 throw new ArgumentException("Al menos debe existir una pregunta");
+            }
+        }
+
+        public void SaveAnsweredQuiz(IEnumerable<Pregunta> preguntas, int deviceId)
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                try
+                {
+                    AnsweredQuizModel answeredQuiz = new AnsweredQuizModel();
+                    answeredQuiz.QuizDeviceId = deviceId;
+                    answeredQuizRepository.Add(answeredQuiz);
+
+                    
+                    foreach (Pregunta pregunta in preguntas)
+                    {
+                        answeredQuizDetailRepository.Add(new AnsweredQuizDetailModel()
+                        {
+                            QuestionId = pregunta.IdPregunta,
+                            AnswerId = GetStartAnswerValue(pregunta.GetRespuesta()),
+                            AnsweredQuizId = answeredQuiz.AnsweredQuizId
+                        });
+                    }
+                    scope.Complete();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Error en repositorio: {ex.Message}");
+                }
+            }
+        }
+
+        int GetStartAnswerValue(Respuesta.RespuestaCualitativa answer)
+        {
+            switch (answer)
+            {
+                case Respuesta.RespuestaCualitativa.TERRIBLE:
+                    return 6;
+                case Respuesta.RespuestaCualitativa.MALO:
+                    return 7;
+                case Respuesta.RespuestaCualitativa.REGULAR:
+                    return 8;
+                case Respuesta.RespuestaCualitativa.BUENO:
+                    return 9;
+                case Respuesta.RespuestaCualitativa.EXCELENTE:
+                    return 10;
+                default:
+                    return 0;
             }
         }
     }

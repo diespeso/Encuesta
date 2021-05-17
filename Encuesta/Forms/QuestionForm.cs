@@ -11,13 +11,15 @@ using Encuesta.Models.Dto;
 
 namespace Encuesta
 {
-    public partial class Nueva_pregunta : Form
+    public partial class QuestionForm : Form
     {
         private QuestionDto _question = new QuestionDto();
-        public Nueva_pregunta()
+        public QuestionForm()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterParent;
+            txtQuestion.Focus();
+            txtQuestion.Select();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,6 +31,12 @@ namespace Encuesta
         public QuestionDto GetNewQuestion()
         {
             return _question;
+        }
+
+        private void txtQuestion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                button1_Click(sender, null);
         }
     }
 }

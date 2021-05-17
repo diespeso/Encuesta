@@ -36,7 +36,7 @@ namespace Encuesta
 
         private void btnAddQuestion_Click(object sender, EventArgs e)
         {
-            using (Nueva_pregunta form = new Nueva_pregunta())
+            using (QuestionForm form = new QuestionForm())
             {
                 if (form.ShowDialog(this) == DialogResult.OK)
                 {

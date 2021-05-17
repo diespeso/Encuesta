@@ -16,6 +16,7 @@ namespace Encuesta
 
         public Pregunta(int idPregunta, String pregunta)
         {
+            this.IdPregunta = idPregunta;
             this.pregunta = pregunta;
             this.respuesta = RespuestaCualitativa.INVALIDO;
         }

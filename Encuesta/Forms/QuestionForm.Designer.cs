@@ -1,7 +1,7 @@
 ﻿
 namespace Encuesta
 {
-    partial class Nueva_pregunta
+    partial class QuestionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -51,6 +51,7 @@ namespace Encuesta
             this.txtQuestion.Name = "txtQuestion";
             this.txtQuestion.Size = new System.Drawing.Size(336, 20);
             this.txtQuestion.TabIndex = 8;
+            this.txtQuestion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuestion_KeyDown);
             // 
             // label1
             // 

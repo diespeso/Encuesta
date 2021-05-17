@@ -166,31 +166,5 @@ namespace Encuesta
             this.estrella_4.Image = Resources.silueta_de_estrella_negra;
             this.estrella_5.Image = Resources.silueta_de_estrella_negra;
         }
-
-        private void label1_TextChanged(object sender, EventArgs e)
-        {
-            ////Resize Label
-            //label1.Hide();
-            //bool labelOverSized = false;
-            //int fontSize = 26;
-            //do
-            //{
-            //    label1.Font = new Font(FontFamily.GenericMonospace, fontSize - 2);
-            //    if (label1.Size.Width > this.Width - 6)
-            //    {
-            //        labelOverSized = true;
-            //    }
-            //    else
-            //    {
-            //        labelOverSized = false;
-            //    }
-            //} while (labelOverSized);
-            
-            ////Center and show question label
-            //int formCenter = this.Size.Width / 2;
-            //int labelHalf = label1.Size.Width / 2;
-            //label1.Location = new Point(formCenter - labelHalf, label1.Location.Y);
-            //label1.Show();
-        }
     }
 }

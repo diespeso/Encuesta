@@ -31,8 +31,10 @@ namespace Encuesta
                     return RespuestaCualitativa.TERRIBLE;
                 case "malo":
                     return RespuestaCualitativa.MALO;
-                case "bueno":
+                case "regular":
                     return RespuestaCualitativa.REGULAR;
+                case "bueno":
+                    return RespuestaCualitativa.BUENO;
                 case "excelente":
                     return RespuestaCualitativa.EXCELENTE;
                 case "INVALIDO":

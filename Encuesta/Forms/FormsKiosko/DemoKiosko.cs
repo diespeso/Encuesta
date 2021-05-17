@@ -14,18 +14,21 @@ namespace Encuesta
     public partial class DemoKiosko : Form
     {
         private string _deviceName = "Dispositivo 1";
+        private int _deviceId;
         private QuizDeviceServices _quizDeviceServices = new QuizDeviceServices();
+        private QuizServices _quizServices = new QuizServices();
         private List<Pregunta> preguntas;
-        public DemoKiosko(string deviveName)
+        public DemoKiosko(string deviceName)
         {
             InitializeComponent();
-            _deviceName = deviveName;
+            _deviceName = deviceName;
+            _deviceId = GetDeviceId();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        int GetDeviceId()
         {
-
+            return _quizDeviceServices.GetDeviceId(_deviceName);
         }
 
         private void ComenzarAPreguntar(object sender, EventArgs e)
@@ -40,8 +43,17 @@ namespace Encuesta
 
 
             this.Hide(); //la forma padre/bienvenida no se cierra, solo se oculta
-            g_pre.Show();
+            g_pre.ShowDialog();
 
+            try
+            {
+                _quizServices.SaveAnsweredQuiz(preguntas, _deviceId);
+            }
+            catch (Exception ex)
+            {
+                //save to log
+                
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
