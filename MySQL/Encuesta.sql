@@ -48,18 +48,18 @@ foreign key (quizId) references quiz(quizId)
 create table quizDevice
 (
 quizDeviceId INT primary key auto_increment,
-quizToApply INT,
+quizToApplyId INT,
 quizDeviceName VARCHAR(30),
 quizDeviceLocation varchar(45),
 dateCreated datetime default now(),
-foreign key (quizToApply) references quiz(quizId)
+foreign key (quizToApplyId) references quiz(quizId)
 );
 
 create table answeredQuiz
 (
 answeredQuizId INT primary key auto_increment,
 quizDeviceId INT,
-creationDate DATE,
+creationDate DATETIME default now(),
 foreign key (quizDeviceId) references quizDevice(quizDeviceId)
 );
 
@@ -150,8 +150,8 @@ values
 
 insert into quizdevice 
 values
-(1,1,'Dipositivo 1','Recepción',CURRENT_TIMESTAMP),
-(2,2,'Dipositivo 2','Tienda',CURRENT_TIMESTAMP);
+(1,1,'Dispositivo 1','Recepción',CURRENT_TIMESTAMP),
+(2,2,'Dispositivo 2','Tienda',CURRENT_TIMESTAMP);
 
 -- Consultar preguntas a realizar en el dispotivio cliente
 select q.questionId, q.question, q.answerGroupId from question q
@@ -168,21 +168,12 @@ where ag.answerGroupId = 2;
 -- Consulta de resultados por encuesta
 select a.answerId, a.answer, q.questionId, q.question , count(*) as quantity from answeredquizdetail aqd
 inner join answeredquiz aq on aqd.answeredQuizId = aq.answeredQuizId 
+inner join answer a on aqd.answerId = a.answerId 
 inner join quiz_has_question qhq on qhq.questionId = aqd.questionId 
 inner join question q on q.questionId = aqd.questionId 
-inner join answer a on aqd.answerId = a.answerId 
 where 
 year(aq.creationDate) = 2021 
 and month(aq.creationDate) = 05
 and qhq.quizId = 1
-group by questionId, answerId 
-
-select aqd.* from answeredquizdetail aqd
-inner join answeredquiz aq on aqd.answeredQuizId = aq.answeredQuizId 
-inner join quiz_has_question qhq on qhq.questionId = aqd.questionId 
-where 
-year(aq.creationDate) = 2021 
-and month(aq.creationDate) = 05
-and qhq.quizId = 1
-
+group by answerId, questionId 
 

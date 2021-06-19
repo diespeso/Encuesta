@@ -35,8 +35,15 @@ namespace Encuesta.Services
 
         public int GetDeviceId(string quizDeviceName)
         {
-            QuizDeviceModel device = _quizDeviceRepository.GetByName(quizDeviceName);
-            return device.QuizDeviceId;
+            try
+            {
+                QuizDeviceModel device = _quizDeviceRepository.GetByName(quizDeviceName);
+                return device.QuizDeviceId;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
         }
     }
 }
