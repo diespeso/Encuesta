@@ -88,6 +88,18 @@
     <Compile Include="Forms\Menu-Admin.Designer.cs">
       <DependentUpon>Menu-Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DevicesMainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DevicesMainView.Designer.cs">
+      <DependentUpon>DevicesMainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeviceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeviceForm.Designer.cs">
+      <DependentUpon>DeviceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ReporteMes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +112,7 @@
     <Compile Include="Models\AnswerModel.cs" />
     <Compile Include="Models\Dto\LoginDto.cs" />
     <Compile Include="Models\Dto\QuestionDto.cs" />
+    <Compile Include="Models\Dto\QuizDeviceDto.cs" />
     <Compile Include="Models\Dto\QuizDto.cs" />
     <Compile Include="Models\Dto\QuizReportDto.cs" />
     <Compile Include="Models\PermitModel.cs" />
@@ -115,12 +128,6 @@
     </Compile>
     <Compile Include="Forms\QuestionForm.Designer.cs">
       <DependentUpon>QuestionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NuevoDispositivo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NuevoDispositivo.Designer.cs">
-      <DependentUpon>NuevoDispositivo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\QuizForm.cs">
       <SubType>Form</SubType>
@@ -176,11 +183,14 @@
     <EmbeddedResource Include="Forms\QuestionForm.resx">
       <DependentUpon>QuestionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DevicesMainView.resx">
+      <DependentUpon>DevicesMainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeviceForm.resx">
+      <DependentUpon>DeviceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReporteMes.resx">
       <DependentUpon>ReporteMes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NuevoDispositivo.resx">
-      <DependentUpon>NuevoDispositivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuizForm.resx">
       <DependentUpon>QuizForm.cs</DependentUpon>

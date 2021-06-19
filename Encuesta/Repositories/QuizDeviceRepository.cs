@@ -86,6 +86,7 @@ namespace Encuesta.Repositories
                                     item.QuizDeviceId = Convert.ToInt32(dr["quizDeviceId"]);
                                     item.QuizToApplyId = Convert.ToInt32(dr["quizToApplyId"].ToString());
                                     item.QuizDeviceName = dr["quizDeviceName"].ToString();
+                                    item.QuizDeviceLocation = dr["quizDeviceLocation"].ToString();
                                     item.DateCreated = Convert.ToDateTime(dr["dateCreated"]);
                                     return item;
                                 }
@@ -125,6 +126,7 @@ namespace Encuesta.Repositories
                                     item.QuizDeviceId = Convert.ToInt32(dr["quizDeviceId"]);
                                     item.QuizToApplyId = Convert.ToInt32(dr["quizToApplyId"].ToString());
                                     item.QuizDeviceName = dr["quizDeviceName"].ToString();
+                                    item.QuizDeviceLocation = dr["quizDeviceLocation"].ToString();
                                     item.DateCreated = Convert.ToDateTime(dr["dateCreated"]);
                                     return item;
                                 }
@@ -165,6 +167,7 @@ namespace Encuesta.Repositories
                                     {
                                         QuizDeviceId = Convert.ToInt32(dr["quizDeviceId"]),
                                         QuizToApplyId = Convert.ToInt32(dr["quizToApplyId"].ToString()),
+                                        QuizDeviceLocation = dr["quizDeviceLocation"].ToString(),
                                         QuizDeviceName = dr["quizDeviceName"].ToString(),
                                         DateCreated = Convert.ToDateTime(dr["dateCreated"])
                                 });

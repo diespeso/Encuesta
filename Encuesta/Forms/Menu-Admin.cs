@@ -29,8 +29,7 @@ namespace Encuesta
 
         private void button5_Click(object sender, EventArgs e)
         {
-            NuevoDispositivo nuevoDispositivo = new NuevoDispositivo();
-            nuevoDispositivo.Show();
+            Program.SetMainPanelForm(new DevicesMainView());
         }
 
         private void cmdNuevaEncuesta_Click(object sender, EventArgs e)

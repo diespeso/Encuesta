@@ -41,3 +41,5 @@ C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.cspr
 C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.exe
 C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.pdb
 C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.csprojAssemblyReference.cache
+C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.DevicesMainView.resources
+C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.DeviceForm.resources

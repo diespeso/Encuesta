@@ -99,8 +99,14 @@ namespace Encuesta.Services
             }
         }
 
-        public QuizDto GetQuiz(int quizId)
+        public QuizDto GetQuiz(int quizId = 0)
         {
+            if (quizId == 0)
+                return new QuizDto()
+                {
+                    Questions = new ObservableCollection<QuestionDto>()
+                };
+
             QuizDto quizDto = new QuizDto();
             quizDto.Questions = new ObservableCollection<QuestionDto>();
 
@@ -125,14 +131,6 @@ namespace Encuesta.Services
         public List<QuizDto> GetQuizList()
         {
             return quizRepository.GetMainView();
-        }
-
-        public QuizDto GetQuiz()
-        {
-            return new QuizDto()
-            {
-                Questions = new ObservableCollection<QuestionDto>()
-            };
         }
 
         public void AddQuestionToQuiz(QuizDto quiz,QuestionDto question)
