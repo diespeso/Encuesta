@@ -47,14 +47,22 @@ namespace Encuesta.Forms
         }
         private void cmdRegistrar_Click(object sender, EventArgs e)
         {
-             string selected=cmbRol.SelectedItem.ToString();
-           int rol= RolStringAInt(selected);
-            userDto.usuario = txtUser.Text;
-            userDto.contrasena = txtPass.Text;
-            userDto.rol = rol;
+            try
+            {
+                string selected = cmbRol.SelectedItem.ToString();
+                int rol = RolStringAInt(selected);
+                userDto.usuario = txtUser.Text;
+                userDto.contrasena = txtPass.Text;
+                userDto.rol = rol;
 
-           
+                userServices.Registro(userDto);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Registro fallido", ex);
+            }
 
+      
         }
 
         private int RolStringAInt(string selected)
