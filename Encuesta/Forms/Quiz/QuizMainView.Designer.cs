@@ -40,12 +40,14 @@ namespace Encuesta
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgQuizes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgQuizes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgQuizes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgQuizes.Location = new System.Drawing.Point(12, 43);
             this.dgQuizes.Name = "dgQuizes";
             this.dgQuizes.ReadOnly = true;
             this.dgQuizes.Size = new System.Drawing.Size(776, 395);
             this.dgQuizes.TabIndex = 0;
+            this.dgQuizes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgQuizes_CellContentClick);
             this.dgQuizes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgQuizes_CellDoubleClick);
             // 
             // btnAddQuestion
@@ -63,6 +65,7 @@ namespace Encuesta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnAddQuestion);
             this.Controls.Add(this.dgQuizes);

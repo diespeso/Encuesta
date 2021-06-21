@@ -41,6 +41,7 @@ namespace Encuesta
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.ForestGreen;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -49,7 +50,7 @@ namespace Encuesta
             this.button1.Size = new System.Drawing.Size(120, 39);
             this.button1.TabIndex = 0;
             this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
@@ -118,7 +119,7 @@ namespace Encuesta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(651, 450);
             this.Controls.Add(this.lblMensajeError);
             this.Controls.Add(this.textBox2);

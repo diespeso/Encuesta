@@ -122,6 +122,7 @@ namespace Encuesta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.estrella_5);
@@ -129,9 +130,9 @@ namespace Encuesta
             this.Controls.Add(this.estrella_3);
             this.Controls.Add(this.estrella_2);
             this.Controls.Add(this.estrella_1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "GUI_Pregunta";
             this.ShowIcon = false;
-            this.Text = "Demo Kiosko";
             this.Load += new System.EventHandler(this.GUI_Pregunta_Load);
             this.Click += new System.EventHandler(this.button1_Click);
             ((System.ComponentModel.ISupportInitialize)(this.estrella_1)).EndInit();

@@ -48,11 +48,12 @@ namespace Encuesta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "DemoKiosko";
             this.ShowIcon = false;
-            this.Text = "Demo Kiosko";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Click += new System.EventHandler(this.ComenzarAPreguntar);
             this.ResumeLayout(false);

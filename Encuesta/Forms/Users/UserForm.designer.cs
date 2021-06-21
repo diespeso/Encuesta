@@ -91,28 +91,33 @@ namespace Encuesta.Forms
             // 
             // cmdRegistrar
             // 
+            this.cmdRegistrar.BackColor = System.Drawing.Color.ForestGreen;
+            this.cmdRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdRegistrar.Location = new System.Drawing.Point(224, 188);
             this.cmdRegistrar.Name = "cmdRegistrar";
             this.cmdRegistrar.Size = new System.Drawing.Size(68, 25);
             this.cmdRegistrar.TabIndex = 6;
             this.cmdRegistrar.Text = "Guardar";
-            this.cmdRegistrar.UseVisualStyleBackColor = true;
+            this.cmdRegistrar.UseVisualStyleBackColor = false;
             this.cmdRegistrar.Click += new System.EventHandler(this.cmdRegistrar_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.ForestGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(141, 188);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(68, 25);
             this.button1.TabIndex = 7;
             this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(420, 250);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cmdRegistrar);

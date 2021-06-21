@@ -36,13 +36,15 @@ namespace Encuesta
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.ForestGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(343, 56);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(61, 26);
             this.button1.TabIndex = 3;
             this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtQuestion
@@ -62,16 +64,17 @@ namespace Encuesta
             this.label1.TabIndex = 9;
             this.label1.Text = "Pregunta";
             // 
-            // Nueva_pregunta
+            // QuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(420, 93);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtQuestion);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Nueva_pregunta";
+            this.Name = "QuestionForm";
             this.Text = "Agregar pregunta";
             this.ResumeLayout(false);
             this.PerformLayout();

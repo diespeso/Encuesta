@@ -57,6 +57,7 @@ namespace Encuesta
             // 
             // elementHost2
             // 
+            this.elementHost2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.elementHost2.Location = new System.Drawing.Point(124, 103);
             this.elementHost2.Name = "elementHost2";
             this.elementHost2.Size = new System.Drawing.Size(552, 285);
@@ -67,23 +68,27 @@ namespace Encuesta
             // btn_siguiente
             // 
             this.btn_siguiente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_siguiente.BackColor = System.Drawing.Color.ForestGreen;
+            this.btn_siguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_siguiente.Location = new System.Drawing.Point(713, 415);
             this.btn_siguiente.Name = "btn_siguiente";
             this.btn_siguiente.Size = new System.Drawing.Size(75, 23);
             this.btn_siguiente.TabIndex = 2;
             this.btn_siguiente.Text = ">";
-            this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.UseVisualStyleBackColor = false;
             this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_click);
             // 
             // btn_anterior
             // 
             this.btn_anterior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_anterior.BackColor = System.Drawing.Color.ForestGreen;
+            this.btn_anterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_anterior.Location = new System.Drawing.Point(12, 415);
             this.btn_anterior.Name = "btn_anterior";
             this.btn_anterior.Size = new System.Drawing.Size(75, 23);
             this.btn_anterior.TabIndex = 3;
             this.btn_anterior.Text = "<";
-            this.btn_anterior.UseVisualStyleBackColor = true;
+            this.btn_anterior.UseVisualStyleBackColor = false;
             this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_click);
             // 
             // lbl_contador
@@ -132,6 +137,7 @@ namespace Encuesta
             // 
             // combo_meses
             // 
+            this.combo_meses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.combo_meses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_meses.FormattingEnabled = true;
             this.combo_meses.Items.AddRange(new object[] {
@@ -156,6 +162,7 @@ namespace Encuesta
             // 
             // combo_encuestas
             // 
+            this.combo_encuestas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.combo_encuestas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_encuestas.Enabled = false;
             this.combo_encuestas.FormattingEnabled = true;
@@ -179,6 +186,7 @@ namespace Encuesta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lbl_pregunta);
             this.Controls.Add(this.combo_encuestas);
