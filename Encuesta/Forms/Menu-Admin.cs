@@ -47,5 +47,10 @@ namespace Encuesta
         {
             Program.SetMainPanelForm(new ReporteMes(_quizServices.GetQuizKeyValuePair()));
         }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            Program.SetMainPanelForm(new UserMainView());
+        }
     }
 }

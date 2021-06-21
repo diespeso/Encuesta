@@ -36,6 +36,7 @@ namespace Encuesta
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblMensajeError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -96,8 +97,22 @@ namespace Encuesta
             this.textBox2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(301, 254);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '•';
             this.textBox2.Size = new System.Drawing.Size(214, 30);
             this.textBox2.TabIndex = 5;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
+            // 
+            // lblMensajeError
+            // 
+            this.lblMensajeError.AutoSize = true;
+            this.lblMensajeError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensajeError.ForeColor = System.Drawing.Color.Red;
+            this.lblMensajeError.Location = new System.Drawing.Point(240, 322);
+            this.lblMensajeError.Name = "lblMensajeError";
+            this.lblMensajeError.Size = new System.Drawing.Size(157, 16);
+            this.lblMensajeError.TabIndex = 6;
+            this.lblMensajeError.Text = "Credenciales incorrectas";
+            this.lblMensajeError.Visible = false;
             // 
             // Login
             // 
@@ -105,6 +120,7 @@ namespace Encuesta
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(651, 450);
+            this.Controls.Add(this.lblMensajeError);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
@@ -127,6 +143,7 @@ namespace Encuesta
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lblMensajeError;
     }
 }
 

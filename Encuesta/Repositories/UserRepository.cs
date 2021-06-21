@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using Encuesta.Models;
+using Encuesta.Models.Dto;
 
 namespace Encuesta.Repositories
 {
@@ -14,6 +15,43 @@ namespace Encuesta.Repositories
         public UserRepository(string connectionString)
         {
             _connectionString = connectionString;
+        }
+
+        public UserModel GetByUserName(string userName)
+        {
+            UserModel item;
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(_connectionString))
+                {
+                    string sql = "select * from user where userName = @userName;";
+                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@userName", userName);
+                        con.Open();
+                        using (MySqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.HasRows)
+                                while (dr.Read())
+                                {
+                                    return new UserModel()
+                                    {
+                                        UserId = Convert.ToInt32(dr["userId"]),
+                                        RoleId = Convert.ToInt32(dr["roleId"]),
+                                        UserName = dr["userName"].ToString(),
+                                        Password = dr["password"].ToString()
+                                    };
+                                }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return null;
         }
 
         //Registrar
@@ -51,10 +89,10 @@ namespace Encuesta.Repositories
                     string sql = "update user set roleId = @roleId, userName = @userName, password = @password where userId = @userId;";
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
-                        cmd.Parameters.AddWithValue("@quizName", model.QuizName);
-                        cmd.Parameters.AddWithValue("@quizId", model.QuizId);
-                        cmd.Parameters.AddWithValue("@quizId", model.QuizId);
-                        cmd.Parameters.AddWithValue("@quizId", model.QuizId);
+                        cmd.Parameters.AddWithValue("@userId", model.UserId);
+                        cmd.Parameters.AddWithValue("@roleId", model.RoleId);
+                        cmd.Parameters.AddWithValue("@userName", model.UserName);
+                        cmd.Parameters.AddWithValue("@password", model.Password);
                         con.Open();
                         cmd.ExecuteNonQuery();
                     }
@@ -110,7 +148,7 @@ namespace Encuesta.Repositories
             {
                 using (MySqlConnection con = new MySqlConnection(_connectionString))
                 {
-                    string sql = "select * from users;";
+                    string sql = "select * from user;";
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
                         list = new List<UserModel>();
@@ -127,45 +165,6 @@ namespace Encuesta.Repositories
                                         RoleId = Convert.ToInt32(dr["roleId"]),
                                         UserName = dr["userName"].ToString(),
                                         Password = dr["password"].ToString()
-                                    });
-                                }
-
-                                return list;
-                            }
-                            else
-                                return null;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message, ex);
-            }
-        }
-
-        public List<UserDto> GetMainView()
-        {
-            List<UserDto> list;
-            try
-            {
-                using (MySqlConnection con = new MySqlConnection(_connectionString))
-                {
-                    string sql = "select * from quiz;";
-                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
-                    {
-                        list = new List<UserDto>();
-                        con.Open();
-                        using (MySqlDataReader dr = cmd.ExecuteReader())
-                        {
-                            if (dr.HasRows)
-                            {
-                                while (dr.Read())
-                                {
-                                    list.Add(new UserDto()
-                                    {
-                                        QuizId = Convert.ToInt32(dr["quizId"]),
-                                        Name = dr["quizName"].ToString()
                                     });
                                 }
 

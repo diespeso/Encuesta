@@ -93,6 +93,16 @@ namespace Encuesta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_grupos_de_usuarios_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-grupos-de-usuarios-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_smartphones_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-smartphones-100", resourceCulture);
