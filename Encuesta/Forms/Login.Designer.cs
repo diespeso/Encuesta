@@ -36,6 +36,7 @@ namespace Encuesta
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblRegistro = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -99,12 +100,24 @@ namespace Encuesta
             this.textBox2.Size = new System.Drawing.Size(214, 30);
             this.textBox2.TabIndex = 5;
             // 
+            // lblRegistro
+            // 
+            this.lblRegistro.AutoSize = true;
+            this.lblRegistro.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblRegistro.Location = new System.Drawing.Point(298, 417);
+            this.lblRegistro.Name = "lblRegistro";
+            this.lblRegistro.Size = new System.Drawing.Size(55, 13);
+            this.lblRegistro.TabIndex = 6;
+            this.lblRegistro.Text = "Registrate";
+            this.lblRegistro.Click += new System.EventHandler(this.lblRegistro_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(651, 450);
+            this.Controls.Add(this.lblRegistro);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
@@ -127,6 +140,7 @@ namespace Encuesta
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lblRegistro;
     }
 }
 

@@ -100,6 +100,12 @@
     <Compile Include="Forms\DeviceForm.Designer.cs">
       <DependentUpon>DeviceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RegistroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegistroForm.Designer.cs">
+      <DependentUpon>RegistroForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ReporteMes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,7 @@
     <Compile Include="Models\Dto\QuizDeviceDto.cs" />
     <Compile Include="Models\Dto\QuizDto.cs" />
     <Compile Include="Models\Dto\QuizReportDto.cs" />
+    <Compile Include="Models\Dto\UserDto.cs" />
     <Compile Include="Models\PermitModel.cs" />
     <Compile Include="Models\QuestionModel.cs" />
     <Compile Include="Models\QuizDeviceModel.cs" />
@@ -151,6 +158,7 @@
     <Compile Include="Repositories\QuizHasQuestionRepository.cs" />
     <Compile Include="Repositories\QuizRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Services\QuizDeviceServices.cs" />
     <Compile Include="Services\QuizServices.cs" />
     <Compile Include="Services\ReportServices.cs" />
@@ -188,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeviceForm.resx">
       <DependentUpon>DeviceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegistroForm.resx">
+      <DependentUpon>RegistroForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReporteMes.resx">
       <DependentUpon>ReporteMes.cs</DependentUpon>

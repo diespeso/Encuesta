@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Encuesta.Models.Dto;
 using Encuesta.Services;
+using Encuesta.Forms;
 
 namespace Encuesta
 {
@@ -35,6 +36,13 @@ namespace Encuesta
                     this.Close();
                 }
             }
+        }
+
+        private void lblRegistro_Click(object sender, EventArgs e)
+        {
+            RegistroForm registro = new RegistroForm();
+            registro.Show();
+            this.Hide();
         }
     }
 }
