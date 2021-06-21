@@ -46,16 +46,22 @@
     <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.24.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>dependencies\MySQL\v4.5.2\MySql.Data.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAPICodePack-Core.1.1.1\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -111,6 +117,12 @@
     </Compile>
     <Compile Include="Forms\ReporteMes.designer.cs">
       <DependentUpon>ReporteMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RespaldoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RespaldoForm.Designer.cs">
+      <DependentUpon>RespaldoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AnsweredQuizModel.cs" />
     <Compile Include="Models\AnsweredQuizDetailModel.cs" />
@@ -219,6 +231,9 @@
     <EmbeddedResource Include="Forms\FormsKiosko\GUI_Pregunta.resx">
       <DependentUpon>GUI_Pregunta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RespaldoForm.resx">
+      <DependentUpon>RespaldoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -274,6 +289,8 @@
     <Content Include="DataBaseConnectionString.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\backup.png" />
+    <None Include="Resources\open-folder.png" />
     <Content Include="ux-review_icon-icons.com_72175.ico" />
     <None Include="Resources\quiz.png" />
   </ItemGroup>

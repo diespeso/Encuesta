@@ -83,6 +83,16 @@ namespace Encuesta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backup {
+            get {
+                object obj = ResourceManager.GetObject("backup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_business_report_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-business-report-100", resourceCulture);
@@ -116,6 +126,16 @@ namespace Encuesta.Properties {
         internal static System.Drawing.Bitmap icons8_survey_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-survey-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap open_folder {
+            get {
+                object obj = ResourceManager.GetObject("open_folder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

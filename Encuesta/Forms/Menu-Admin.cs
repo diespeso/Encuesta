@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Encuesta.Services;
+using Encuesta.Forms;
 
 namespace Encuesta
 {
@@ -46,6 +47,13 @@ namespace Encuesta
         private void btnReports_Click(object sender, EventArgs e)
         {
             Program.SetMainPanelForm(new ReporteMes(_quizServices.GetQuizKeyValuePair()));
+        }
+
+        private void cmdBackup_Click(object sender, EventArgs e)
+        {
+            RespaldoForm respaldoForm = new RespaldoForm();
+            respaldoForm.Show();
+            //this.Hide();
         }
     }
 }
