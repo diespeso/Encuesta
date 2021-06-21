@@ -36,12 +36,13 @@ namespace Encuesta
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.ForestGreen;
+            this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(343, 56);
+            this.button1.Font = new System.Drawing.Font("Cambria", 7.8F);
+            this.button1.Location = new System.Drawing.Point(457, 69);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 26);
+            this.button1.Size = new System.Drawing.Size(81, 32);
             this.button1.TabIndex = 3;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = false;
@@ -49,33 +50,38 @@ namespace Encuesta
             // 
             // txtQuestion
             // 
-            this.txtQuestion.Location = new System.Drawing.Point(68, 12);
+            this.txtQuestion.Location = new System.Drawing.Point(91, 15);
+            this.txtQuestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtQuestion.Name = "txtQuestion";
-            this.txtQuestion.Size = new System.Drawing.Size(336, 20);
+            this.txtQuestion.Size = new System.Drawing.Size(447, 22);
             this.txtQuestion.TabIndex = 8;
             this.txtQuestion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuestion_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Font = new System.Drawing.Font("Cambria", 7.8F);
+            this.label1.Location = new System.Drawing.Point(16, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 9;
             this.label1.Text = "Pregunta";
             // 
             // QuestionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(420, 93);
+            this.ClientSize = new System.Drawing.Size(560, 114);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtQuestion);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "QuestionForm";
             this.Text = "Agregar pregunta";
+            this.Load += new System.EventHandler(this.QuestionForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

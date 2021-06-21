@@ -295,6 +295,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\icons8-grupos-de-usuarios-100.png" />
+    <None Include="Resources\c3f32936588944e2911180d959528d73.png" />
+    <None Include="Resources\c3f32936588944e2911180d959528d73 %281%29.png" />
+    <None Include="Resources\ger.png" />
+    <Content Include="Services\c3f32936588944e2911180d959528d73.png" />
     <Content Include="ux-review_icon-icons.com_72175.ico" />
     <None Include="Resources\quiz.png" />
   </ItemGroup>

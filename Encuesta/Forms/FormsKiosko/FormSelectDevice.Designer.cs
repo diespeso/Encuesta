@@ -37,18 +37,21 @@ namespace Encuesta.Forms.FormsKiosko
             // 
             this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(46, 52);
+            this.comboBox1.Location = new System.Drawing.Point(61, 64);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(259, 21);
+            this.comboBox1.Size = new System.Drawing.Size(344, 24);
             this.comboBox1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.ForestGreen;
+            this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(133, 101);
+            this.button1.Font = new System.Drawing.Font("Cambria", 7.8F);
+            this.button1.Location = new System.Drawing.Point(177, 124);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 1;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
@@ -56,13 +59,14 @@ namespace Encuesta.Forms.FormsKiosko
             // 
             // FormSelectDevice
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(354, 149);
+            this.ClientSize = new System.Drawing.Size(472, 183);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormSelectDevice";
             this.Text = "Seleccionar dispositivo";
             this.Load += new System.EventHandler(this.FormSelectDevice_Load);
