@@ -37,7 +37,7 @@ namespace Encuesta.Forms
                     cmbRol.DisplayMember = "roleName";
                     cmbRol.ValueMember = "userRoleId";
                     cmbRol.DataSource = ds.Tables["userrole"];
-
+               
                 }
                 catch (Exception ex)
                 {
@@ -47,20 +47,30 @@ namespace Encuesta.Forms
         }
         private void cmdRegistrar_Click(object sender, EventArgs e)
         {
+            //DataRowView para obtener el ID del elemento seleccionado (Admin = 1 y user =2)
+
+            DataRowView drv = cmbRol.SelectedItem as DataRowView;
+
             try
             {
                 string selected = cmbRol.SelectedItem.ToString();
                 int rol = RolStringAInt(selected);
                 userDto.usuario = txtUser.Text;
                 userDto.contrasena = txtPass.Text;
-                userDto.rol = rol;
+                userDto.rol =Convert.ToInt32( drv.Row["userRoleId"]);
 
                 userServices.Registro(userDto);
+                MessageBox.Show("Registro completado");
+
+                Login login = new Login();
+                this.Hide();
+                login.Show();
             }
             catch(Exception ex)
             {
                 throw new Exception("Registro fallido", ex);
             }
+
 
       
         }

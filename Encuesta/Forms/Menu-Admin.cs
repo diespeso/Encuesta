@@ -51,9 +51,7 @@ namespace Encuesta
 
         private void cmdBackup_Click(object sender, EventArgs e)
         {
-            RespaldoForm respaldoForm = new RespaldoForm();
-            respaldoForm.Show();
-            //this.Hide();
+           
         }
     }
 }
