@@ -32,14 +32,31 @@ namespace Encuesta.Forms
 
         private void cmdBackup_Click(object sender, EventArgs e)
         {
-            string dir = txtDir.Text + "\backup.sql";
-            using (MySqlConnection connection = new MySqlConnection(Program.GetConnectionString()))
+            try
             {
-                using (MySqlCommand command = new MySqlCommand())
+                string dir = txtDir.Text + "\\backup.sql";
+                using (MySqlConnection connection = new MySqlConnection(Program.GetConnectionString()))
                 {
-                    //using (MySqlBack)
+                    using (MySqlCommand command = new MySqlCommand())
+                    {
+                        using (MySqlBackup backup = new MySqlBackup(command))
+                        {
+                            command.Connection = connection;
+                            connection.Open();
+                            backup.ExportToFile(dir);
+                            connection.Close();
+                        }
+                    }
                 }
+                MessageBox.Show("Base de datos respaldada");
+                this.Close();
+   
             }
+            catch(Exception ex)
+            {
+                throw new Exception("Fallo al respaldar", ex);
+            }
+         
         }
     }
 }
