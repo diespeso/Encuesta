@@ -12,29 +12,18 @@ using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace Encuesta.Forms
 {
-    public partial class RespaldoForm : Form
+    public partial class RecuperarForm : Form
     {
-
-        public RespaldoForm()
+        public RecuperarForm()
         {
             InitializeComponent();
         }
 
-        private void cmdDir_Click(object sender, EventArgs e)
-        {
-            CommonOpenFileDialog openFile = new CommonOpenFileDialog();
-            openFile.IsFolderPicker = true;
-            if (openFile.ShowDialog() == CommonFileDialogResult.Ok)
-            {
-                txtDir.Text = openFile.FileName;
-            }
-        }
-
-        private void cmdBackup_Click(object sender, EventArgs e)
+        private void cmdRecovery_Click(object sender, EventArgs e)
         {
             try
             {
-                string dir = txtDir.Text + "\\backup.sql";
+                string dir = txtDir.Text;
                 using (MySqlConnection connection = new MySqlConnection(Program.GetConnectionString()))
                 {
                     using (MySqlCommand command = new MySqlCommand())
@@ -43,27 +32,29 @@ namespace Encuesta.Forms
                         {
                             command.Connection = connection;
                             connection.Open();
-                            backup.ExportToFile(dir);
+                            backup.ImportFromFile(dir);
                             connection.Close();
                         }
                     }
                 }
-                MessageBox.Show("Base de datos respaldada");
+                MessageBox.Show("Base de datos recuperada");
                 this.Close();
-   
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                throw new Exception("Fallo al respaldar", ex);
+                throw new Exception("Fallo al recuperar", ex);
             }
-         
+
         }
 
-        private void cmdRecuperar_Click(object sender, EventArgs e)
+        private void cmdDir_Click(object sender, EventArgs e)
         {
-            RecuperarForm recuperar = new RecuperarForm();
-            this.Hide();
-            recuperar.Show();
+            CommonOpenFileDialog openFile = new CommonOpenFileDialog();
+            if (openFile.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                txtDir.Text = openFile.FileName;
+            }
         }
     }
 }

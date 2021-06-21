@@ -33,6 +33,7 @@ namespace Encuesta.Forms
             this.txtDir = new System.Windows.Forms.TextBox();
             this.lblDir = new System.Windows.Forms.Label();
             this.cmdBackup = new System.Windows.Forms.Button();
+            this.cmdRecuperar = new System.Windows.Forms.Button();
             this.cmdDir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -72,6 +73,18 @@ namespace Encuesta.Forms
             this.cmdBackup.UseVisualStyleBackColor = true;
             this.cmdBackup.Click += new System.EventHandler(this.cmdBackup_Click);
             // 
+            // cmdRecuperar
+            // 
+            this.cmdRecuperar.FlatAppearance.BorderSize = 0;
+            this.cmdRecuperar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdRecuperar.Image = global::Encuesta.Properties.Resources.import;
+            this.cmdRecuperar.Location = new System.Drawing.Point(386, 198);
+            this.cmdRecuperar.Name = "cmdRecuperar";
+            this.cmdRecuperar.Size = new System.Drawing.Size(33, 28);
+            this.cmdRecuperar.TabIndex = 5;
+            this.cmdRecuperar.UseVisualStyleBackColor = true;
+            this.cmdRecuperar.Click += new System.EventHandler(this.cmdRecuperar_Click);
+            // 
             // cmdDir
             // 
             this.cmdDir.FlatAppearance.BorderSize = 0;
@@ -89,6 +102,7 @@ namespace Encuesta.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 235);
+            this.Controls.Add(this.cmdRecuperar);
             this.Controls.Add(this.cmdBackup);
             this.Controls.Add(this.cmdDir);
             this.Controls.Add(this.lblDir);
@@ -108,5 +122,6 @@ namespace Encuesta.Forms
         private System.Windows.Forms.Label lblDir;
         private System.Windows.Forms.Button cmdDir;
         private System.Windows.Forms.Button cmdBackup;
+        private System.Windows.Forms.Button cmdRecuperar;
     }
 }

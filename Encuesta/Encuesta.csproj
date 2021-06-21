@@ -142,6 +142,12 @@
     <Compile Include="Forms\DeviceForm.Designer.cs">
       <DependentUpon>DeviceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RecuperarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RecuperarForm.Designer.cs">
+      <DependentUpon>RecuperarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RegistroForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +251,9 @@
     <EmbeddedResource Include="Forms\DeviceForm.resx">
       <DependentUpon>DeviceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RecuperarForm.resx">
+      <DependentUpon>RecuperarForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegistroForm.resx">
       <DependentUpon>RegistroForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +336,7 @@
     </Content>
     <None Include="Resources\backup.png" />
     <None Include="Resources\open-folder.png" />
+    <None Include="Resources\import.png" />
     <Content Include="ux-review_icon-icons.com_72175.ico" />
     <None Include="Resources\quiz.png" />
   </ItemGroup>
