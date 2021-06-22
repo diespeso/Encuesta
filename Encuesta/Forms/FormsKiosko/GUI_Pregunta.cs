@@ -44,7 +44,7 @@ namespace Encuesta
         /// </summary>
         private void IrAAgradecimiento()
         { //se podria usar un trycatch, pero creo que es algo que debe fallar y ya
-            this.agradecimiento.Show();
+            this.agradecimiento.ShowDialog();
             this.Hide();
         }
 

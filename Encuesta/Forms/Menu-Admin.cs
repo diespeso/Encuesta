@@ -15,6 +15,7 @@ namespace Encuesta
     public partial class Menu_Admin : Form
     {
         private QuizServices _quizServices = new QuizServices();
+        private DemoKiosko demo;
         public Menu_Admin()
         {
             InitializeComponent();
@@ -46,8 +47,8 @@ namespace Encuesta
                 KeyValuePair<int, string> device = selectDevice.SelectedDevice;
                 if (device.Key != 0 && device.Value != "")
                 {
-                    DemoKiosko demo = new DemoKiosko(device.Value);
-                    demo.Show();
+                    demo = new DemoKiosko(device.Value);
+                    demo.ShowDialog();
                 }
             }
         }

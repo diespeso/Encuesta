@@ -40,13 +40,13 @@ namespace Encuesta
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dg.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg.Location = new System.Drawing.Point(16, 53);
-            this.dg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dg.Location = new System.Drawing.Point(12, 43);
             this.dg.Name = "dg";
             this.dg.ReadOnly = true;
             this.dg.RowHeadersWidth = 51;
-            this.dg.Size = new System.Drawing.Size(1035, 486);
+            this.dg.Size = new System.Drawing.Size(776, 395);
             this.dg.TabIndex = 0;
             this.dg.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgQuizes_CellDoubleClick);
             // 
@@ -54,24 +54,22 @@ namespace Encuesta
             // 
             this.btnAddQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddQuestion.Image = global::Encuesta.Properties.Resources.add__1_;
-            this.btnAddQuestion.Location = new System.Drawing.Point(1017, 15);
-            this.btnAddQuestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddQuestion.Location = new System.Drawing.Point(763, 12);
             this.btnAddQuestion.Name = "btnAddQuestion";
-            this.btnAddQuestion.Size = new System.Drawing.Size(33, 31);
+            this.btnAddQuestion.Size = new System.Drawing.Size(25, 25);
             this.btnAddQuestion.TabIndex = 5;
             this.btnAddQuestion.UseVisualStyleBackColor = true;
             this.btnAddQuestion.Click += new System.EventHandler(this.btnAddQuestion_Click);
             // 
             // DevicesMainView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnAddQuestion);
             this.Controls.Add(this.dg);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DevicesMainView";
             this.Text = "QuizMainView";
             this.Load += new System.EventHandler(this.DevicesMainView_Load);

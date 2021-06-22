@@ -38,10 +38,9 @@ namespace Encuesta
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 271);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 220);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(447, 120);
+            this.label1.Size = new System.Drawing.Size(359, 96);
             this.label1.TabIndex = 0;
             this.label1.Text = "EVALUANOS\r\n\r\nDA CLICK PARA CONTINUAR\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -52,23 +51,23 @@ namespace Encuesta
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = global::Encuesta.Properties.Resources.c3f32936588944e2911180d959528d73__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(-57, -28);
+            this.pictureBox1.Location = new System.Drawing.Point(-43, -23);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(617, 282);
+            this.pictureBox1.Size = new System.Drawing.Size(464, 230);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // DemoKiosko
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.ClientSize = new System.Drawing.Size(499, 400);
+            this.ClientSize = new System.Drawing.Size(374, 325);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DemoKiosko";
             this.ShowIcon = false;
             this.Load += new System.EventHandler(this.Form1_Load);

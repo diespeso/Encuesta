@@ -64,7 +64,10 @@ namespace Encuesta
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
                 button1_Click(sender, e);
+            }
         }
 
         private void Login_Load(object sender, EventArgs e)
