@@ -39,5 +39,10 @@ namespace Encuesta
         {
             Program.SetMainPanelForm(new QuizForm(GetSelectedQuizId(e.RowIndex)));
         }
+
+        private void dgQuizes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

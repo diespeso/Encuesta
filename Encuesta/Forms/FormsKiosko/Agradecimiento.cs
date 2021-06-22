@@ -31,5 +31,10 @@ namespace Encuesta
             this.retorno.Show();
             this.Close();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

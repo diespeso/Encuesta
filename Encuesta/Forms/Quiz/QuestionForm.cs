@@ -38,5 +38,10 @@ namespace Encuesta
             if(e.KeyCode == Keys.Enter)
                 button1_Click(sender, null);
         }
+
+        private void QuestionForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
