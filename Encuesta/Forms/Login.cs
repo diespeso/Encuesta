@@ -16,10 +16,27 @@ namespace Encuesta
     {
         private UserServices _userService = new UserServices();
         private LoginDto _loginData = new LoginDto();
+        private Timer timerMensaje = new Timer();
+        private bool timerFirstCycle = true;
         public Login()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            timerMensaje.Tick += TimerMensaje_Tick;
+            timerMensaje.Interval = 2500;
+        }
+
+        private void TimerMensaje_Tick(object sender, EventArgs e)
+        {
+            if (timerFirstCycle)
+                timerFirstCycle = false;
+            else
+            {
+                lblMensajeError.Visible = false;
+                timerFirstCycle = true;
+                timerMensaje.Stop();
+                button1.Enabled = true;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,6 +52,19 @@ namespace Encuesta
                     this.Close();
                 }
             }
+            else
+            {
+                lblMensajeError.Visible = true;
+                button1.Enabled = false;
+                textBox2.Clear();
+                timerMensaje.Start();
+            }
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                button1_Click(sender, e);
         }
     }
 }

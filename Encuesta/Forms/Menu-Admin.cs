@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Encuesta.Forms.FormsKiosko;
 using Encuesta.Services;
 
 namespace Encuesta
@@ -39,13 +40,26 @@ namespace Encuesta
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DemoKiosko demo = new DemoKiosko("Dispositivo 1");
-            demo.Show();
+            FormSelectDevice selectDevice = new FormSelectDevice();
+            if (selectDevice.ShowDialog() == DialogResult.OK)
+            {
+                KeyValuePair<int, string> device = selectDevice.SelectedDevice;
+                if (device.Key != 0 && device.Value != "")
+                {
+                    DemoKiosko demo = new DemoKiosko(device.Value);
+                    demo.Show();
+                }
+            }
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
             Program.SetMainPanelForm(new ReporteMes(_quizServices.GetQuizKeyValuePair()));
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            Program.SetMainPanelForm(new UserMainView());
         }
     }
 }

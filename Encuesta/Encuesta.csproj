@@ -76,6 +76,12 @@
     <Compile Include="Forms\FormsKiosko\Form1.Designer.cs">
       <DependentUpon>DemoKiosko.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormsKiosko\FormSelectDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormsKiosko\FormSelectDevice.Designer.cs">
+      <DependentUpon>FormSelectDevice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Menu-Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,22 +94,34 @@
     <Compile Include="Forms\Menu-Admin.Designer.cs">
       <DependentUpon>Menu-Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DevicesMainView.cs">
+    <Compile Include="Forms\Devices\DevicesMainView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DevicesMainView.Designer.cs">
+    <Compile Include="Forms\Devices\DevicesMainView.Designer.cs">
       <DependentUpon>DevicesMainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DeviceForm.cs">
+    <Compile Include="Forms\Devices\DeviceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DeviceForm.Designer.cs">
+    <Compile Include="Forms\Devices\DeviceForm.Designer.cs">
       <DependentUpon>DeviceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ReporteMes.cs">
+    <Compile Include="Forms\Users\UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ReporteMes.designer.cs">
+    <Compile Include="Forms\Users\UserForm.designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\UserMainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\UserMainView.Designer.cs">
+      <DependentUpon>UserMainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\ReporteMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\ReporteMes.designer.cs">
       <DependentUpon>ReporteMes.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AnsweredQuizModel.cs" />
@@ -115,6 +133,7 @@
     <Compile Include="Models\Dto\QuizDeviceDto.cs" />
     <Compile Include="Models\Dto\QuizDto.cs" />
     <Compile Include="Models\Dto\QuizReportDto.cs" />
+    <Compile Include="Models\Dto\UserDto.cs" />
     <Compile Include="Models\PermitModel.cs" />
     <Compile Include="Models\QuestionModel.cs" />
     <Compile Include="Models\QuizDeviceModel.cs" />
@@ -123,27 +142,28 @@
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\UserRoleHasPermitModel.cs" />
     <Compile Include="Models\UserRoleModel.cs" />
-    <Compile Include="Forms\QuestionForm.cs">
+    <Compile Include="Forms\Quiz\QuestionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\QuestionForm.Designer.cs">
+    <Compile Include="Forms\Quiz\QuestionForm.Designer.cs">
       <DependentUpon>QuestionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\QuizForm.cs">
+    <Compile Include="Forms\Quiz\QuizForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\QuizForm.Designer.cs">
+    <Compile Include="Forms\Quiz\QuizForm.Designer.cs">
       <DependentUpon>QuizForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\QuizMainView.cs">
+    <Compile Include="Forms\Quiz\QuizMainView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\QuizMainView.Designer.cs">
+    <Compile Include="Forms\Quiz\QuizMainView.Designer.cs">
       <DependentUpon>QuizMainView.cs</DependentUpon>
     </Compile>
     <Compile Include="Repositories\AnsweredQuizDetailRepository.cs" />
     <Compile Include="Repositories\AnsweredQuizRepository.cs" />
     <Compile Include="Repositories\AnswerRepository.cs" />
+    <Compile Include="Repositories\UserRoleRepository.cs" />
     <Compile Include="Repositories\PermitRepository.cs" />
     <Compile Include="Repositories\AnswerGroupRepository.cs" />
     <Compile Include="Repositories\QuestionRepository.cs" />
@@ -151,9 +171,11 @@
     <Compile Include="Repositories\QuizHasQuestionRepository.cs" />
     <Compile Include="Repositories\QuizRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Services\QuizDeviceServices.cs" />
     <Compile Include="Services\QuizServices.cs" />
     <Compile Include="Services\ReportServices.cs" />
+    <Compile Include="Services\SecurePasswordHasher.cs" />
     <Compile Include="Services\UserServices.cs" />
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
@@ -174,28 +196,37 @@
     <EmbeddedResource Include="Forms\FormsKiosko\DemoKiosko.resx">
       <DependentUpon>DemoKiosko.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormsKiosko\FormSelectDevice.resx">
+      <DependentUpon>FormSelectDevice.cs</DependentUpon>
+    </EmbeddedResource>
     <!--<EmbeddedResource Include="Forms\FormsKiosko\Form1.resx">
       <DependentUpon>DemoKiosko.cs</DependentUpon>
     </EmbeddedResource>-->
     <EmbeddedResource Include="Forms\Menu-Admin.resx">
       <DependentUpon>Menu-Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QuestionForm.resx">
+    <EmbeddedResource Include="Forms\Quiz\QuestionForm.resx">
       <DependentUpon>QuestionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DevicesMainView.resx">
+    <EmbeddedResource Include="Forms\Devices\DevicesMainView.resx">
       <DependentUpon>DevicesMainView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DeviceForm.resx">
+    <EmbeddedResource Include="Forms\Devices\DeviceForm.resx">
       <DependentUpon>DeviceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ReporteMes.resx">
+    <EmbeddedResource Include="Forms\Users\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\UserMainView.resx">
+      <DependentUpon>UserMainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\ReporteMes.resx">
       <DependentUpon>ReporteMes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QuizForm.resx">
+    <EmbeddedResource Include="Forms\Quiz\QuizForm.resx">
       <DependentUpon>QuizForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QuizMainView.resx">
+    <EmbeddedResource Include="Forms\Quiz\QuizMainView.resx">
       <DependentUpon>QuizMainView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
@@ -263,6 +294,7 @@
     <Content Include="DataBaseConnectionString.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icons8-grupos-de-usuarios-100.png" />
     <Content Include="ux-review_icon-icons.com_72175.ico" />
     <None Include="Resources\quiz.png" />
   </ItemGroup>
