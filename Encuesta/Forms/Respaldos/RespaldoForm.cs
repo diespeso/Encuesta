@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace Encuesta.Forms
         {
             CommonOpenFileDialog openFile = new CommonOpenFileDialog();
             openFile.IsFolderPicker = true;
+            openFile.InitialDirectory = Directory.GetCurrentDirectory() + "\\BackUp";
             if (openFile.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 txtDir.Text = openFile.FileName;
@@ -34,7 +36,7 @@ namespace Encuesta.Forms
         {
             try
             {
-                string dir = txtDir.Text + "\\backup.sql";
+                string dir = txtDir.Text + $"\\copiaseguridad[{DateTime.Now.ToString("yy-MM-dd")}].sql";
                 using (MySqlConnection connection = new MySqlConnection(Program.GetConnectionString()))
                 {
                     using (MySqlCommand command = new MySqlCommand())
@@ -61,9 +63,12 @@ namespace Encuesta.Forms
 
         private void cmdRecuperar_Click(object sender, EventArgs e)
         {
-            RecuperarForm recuperar = new RecuperarForm();
-            this.Hide();
-            recuperar.Show();
+            Program.SetMainPanelForm(new RecuperarForm());
+        }
+
+        private void RespaldoForm_Load(object sender, EventArgs e)
+        {
+            txtDir.Text = Directory.GetCurrentDirectory() + "\\BackUp";
         }
     }
 }

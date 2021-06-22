@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Encuesta.Forms;
 using Encuesta.Models.Dto;
 using Encuesta.Services;
 
@@ -41,6 +42,12 @@ namespace Encuesta
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (Program.GetConnectionString() == "" || Program.GetConnectionString() == null)
+            {
+                MessageBox.Show("Configura la base de datos");
+                return;
+            }
+
             _loginData.Username = textBox1.Text;
             _loginData.Password = textBox1.Text;
             if (_userService.Login(textBox1.Text,textBox2.Text))
@@ -73,6 +80,12 @@ namespace Encuesta
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DBConfigForm config = new DBConfigForm();
+            config.ShowDialog(this);
         }
     }
 }

@@ -45,7 +45,6 @@ namespace Encuesta.Forms
             {
                 throw new Exception("Fallo al recuperar", ex);
             }
-
         }
 
         private void cmdDir_Click(object sender, EventArgs e)
@@ -55,6 +54,11 @@ namespace Encuesta.Forms
             {
                 txtDir.Text = openFile.FileName;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Program.SetMainPanelForm(new RespaldoForm());
         }
     }
 }

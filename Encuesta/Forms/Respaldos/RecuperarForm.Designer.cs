@@ -33,6 +33,7 @@ namespace Encuesta.Forms
             this.lblDir = new System.Windows.Forms.Label();
             this.txtDir = new System.Windows.Forms.TextBox();
             this.cmdRecovery = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdDir
@@ -65,7 +66,7 @@ namespace Encuesta.Forms
             // 
             // cmdRecovery
             // 
-            this.cmdRecovery.Location = new System.Drawing.Point(205, 118);
+            this.cmdRecovery.Location = new System.Drawing.Point(254, 118);
             this.cmdRecovery.Name = "cmdRecovery";
             this.cmdRecovery.Size = new System.Drawing.Size(72, 22);
             this.cmdRecovery.TabIndex = 7;
@@ -73,11 +74,22 @@ namespace Encuesta.Forms
             this.cmdRecovery.UseVisualStyleBackColor = true;
             this.cmdRecovery.Click += new System.EventHandler(this.cmdRecovery_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(176, 118);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(72, 22);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Cancelar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // RecuperarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 152);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cmdRecovery);
             this.Controls.Add(this.cmdDir);
             this.Controls.Add(this.lblDir);
@@ -95,5 +107,6 @@ namespace Encuesta.Forms
         private System.Windows.Forms.Label lblDir;
         private System.Windows.Forms.TextBox txtDir;
         private System.Windows.Forms.Button cmdRecovery;
+        private System.Windows.Forms.Button button1;
     }
 }

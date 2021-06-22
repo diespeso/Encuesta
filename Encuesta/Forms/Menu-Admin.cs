@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Encuesta.Forms;
 using Encuesta.Forms.FormsKiosko;
 using Encuesta.Services;
 
@@ -61,6 +62,11 @@ namespace Encuesta
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             Program.SetMainPanelForm(new UserMainView());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Program.SetMainPanelForm(new RespaldoForm());
         }
     }
 }

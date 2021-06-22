@@ -13,7 +13,7 @@ namespace Encuesta
 {
     public partial class DemoKiosko : Form
     {
-        private string _deviceName = "Dispositivo 1";
+        private string _deviceName;
         private int _deviceId;
         private QuizDeviceServices _quizDeviceServices = new QuizDeviceServices();
         private QuizServices _quizServices = new QuizServices();

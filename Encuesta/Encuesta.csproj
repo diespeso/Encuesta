@@ -52,6 +52,21 @@
     <ApplicationIcon>ux-review_icon-icons.com_72175.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.11.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.11.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
@@ -64,9 +79,27 @@
       <HintPath>packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.24.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>dependencies\MySQL\v4.5.2\MySql.Data.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAPICodePack.1.1.1\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ExtendedLinguisticServices, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAPICodePack.1.1.1\lib\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Sensors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAPICodePack.1.1.1\lib\Microsoft.WindowsAPICodePack.Sensors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAPICodePack.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAPICodePack.1.1.1\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.23.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.23\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlBackup, Version=2.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MySqlBackup.NET.2.3.4\lib\net452\MySqlBackup.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore">
       <EmbedInteropTypes>False</EmbedInteropTypes>
@@ -74,11 +107,28 @@
     <Reference Include="PresentationFramework">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Renci.SshNet, Version=2020.0.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>packages\SSH.NET.2020.0.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core">
       <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.3\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions">
       <EmbedInteropTypes>False</EmbedInteropTypes>
@@ -98,14 +148,26 @@
     <Reference Include="System.Xml">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.23\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="WindowsFormsIntegration">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.23\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\DBConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DBConfigForm.Designer.cs">
+      <DependentUpon>DBConfigForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormsKiosko\DemoKiosko.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +203,18 @@
     </Compile>
     <Compile Include="Forms\Devices\DeviceForm.Designer.cs">
       <DependentUpon>DeviceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Respaldos\RecuperarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Respaldos\RecuperarForm.Designer.cs">
+      <DependentUpon>RecuperarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Respaldos\RespaldoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Respaldos\RespaldoForm.Designer.cs">
+      <DependentUpon>RespaldoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Users\UserForm.cs">
       <SubType>Form</SubType>
@@ -229,6 +303,9 @@
     <Compile Include="Forms\FormsKiosko\Pregunta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\DBConfigForm.resx">
+      <DependentUpon>DBConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormsKiosko\DemoKiosko.resx">
       <DependentUpon>DemoKiosko.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +326,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Devices\DeviceForm.resx">
       <DependentUpon>DeviceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Respaldos\RecuperarForm.resx">
+      <DependentUpon>RecuperarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Respaldos\RespaldoForm.resx">
+      <DependentUpon>RespaldoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Users\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
@@ -327,14 +410,19 @@
     <None Include="Resources\icons8-business-report-100.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataBaseConnectionString.txt">
+    <Content Include="DataBaseConnectionString.txt" />
+    <None Include="Resources\icons8-engranaje-48.png" />
+    <Content Include="Forms\baseEncuesta.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Windows Logo.png" />
     <None Include="Resources\icons8-grupos-de-usuarios-100.png" />
     <None Include="Resources\c3f32936588944e2911180d959528d73.png" />
     <None Include="Resources\c3f32936588944e2911180d959528d73 %281%29.png" />
     <None Include="Resources\ger.png" />
-    <Content Include="Services\c3f32936588944e2911180d959528d73.png" />
+    <None Include="Resources\import.png" />
+    <None Include="Resources\open-folder.png" />
+    <None Include="Resources\backup.png" />
     <Content Include="ux-review_icon-icons.com_72175.ico" />
     <None Include="Resources\quiz.png" />
   </ItemGroup>

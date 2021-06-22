@@ -83,6 +83,16 @@ namespace Encuesta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backup {
+            get {
+                object obj = ResourceManager.GetObject("backup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap c3f32936588944e2911180d959528d73 {
             get {
                 object obj = ResourceManager.GetObject("c3f32936588944e2911180d959528d73", resourceCulture);
@@ -123,6 +133,16 @@ namespace Encuesta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_engranaje_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-engranaje-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_grupos_de_usuarios_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-grupos-de-usuarios-100", resourceCulture);
@@ -156,6 +176,26 @@ namespace Encuesta.Properties {
         internal static System.Drawing.Bitmap icons8_survey_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-survey-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap import {
+            get {
+                object obj = ResourceManager.GetObject("import", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap open_folder {
+            get {
+                object obj = ResourceManager.GetObject("open_folder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
