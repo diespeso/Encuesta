@@ -273,6 +273,7 @@
     <Compile Include="Repositories\AnsweredQuizDetailRepository.cs" />
     <Compile Include="Repositories\AnsweredQuizRepository.cs" />
     <Compile Include="Repositories\AnswerRepository.cs" />
+    <Compile Include="Repositories\PermitRepository - Copy.cs" />
     <Compile Include="Repositories\UserRoleRepository.cs" />
     <Compile Include="Repositories\PermitRepository.cs" />
     <Compile Include="Repositories\AnswerGroupRepository.cs" />
@@ -410,7 +411,6 @@
     <None Include="Resources\icons8-business-report-100.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataBaseConnectionString.txt" />
     <None Include="Resources\icons8-engranaje-48.png" />
     <Content Include="Forms\baseEncuesta.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

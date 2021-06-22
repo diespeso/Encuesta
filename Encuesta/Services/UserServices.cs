@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Encuesta.Models;
 using Encuesta.Models.Dto;
 using Encuesta.Repositories;
@@ -14,11 +15,15 @@ namespace Encuesta.Services
     {
         private UserRepository userRepository = new UserRepository(Program.GetConnectionString());
         private UserRoleRepository _userRoleRepository = new UserRoleRepository(Program.GetConnectionString());
+        private static PermitRepository _userPermitRepository = new PermitRepository(Program.GetConnectionString());
+        private static UserRoleHasPermitRepository _userPermitRolesRepository = new UserRoleHasPermitRepository(Program.GetConnectionString());
+        public static UserModel LoggedUser = null;
 
         public bool Login(string username, string password)
         {
             try
             {
+                LoggedUser = userRepository.GetByUserName(username);
                 return SecurePasswordHasher.Verify(password, userRepository.GetByUserName(username).Password);
             }
             catch (Exception ex)
@@ -77,11 +82,23 @@ namespace Encuesta.Services
             return userRepository.GetAll();
         }
 
-        public bool ValidateAccess(string permitName)
+        public static bool ValidateAccess(string permitName)
         {
             bool hasPermit = false;
 
-            
+            PermitModel permit = _userPermitRepository.GetByName(permitName);
+            try
+            {
+                hasPermit = _userPermitRolesRepository.Get(permit.PermitId, LoggedUser.RoleId).PermitAllowed;
+            }
+            catch (Exception ex)
+            {
+            }
+
+            if (hasPermit == false)
+            {
+                MessageBox.Show("Permisos insuficientes");
+            }
 
             return hasPermit;
         }

@@ -94,6 +94,40 @@ namespace Encuesta.Repositories
             return null;
         }
 
+        public PermitModel GetByName(string permitName)
+        {
+            PermitModel item;
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(_connectionString))
+                {
+                    string sql = "SELECT permitId, permitName FROM permit WHERE permitName = @permitName;";
+                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@permitName", permitName);
+                        con.Open();
+                        using (MySqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.HasRows)
+                                while (dr.Read())
+                                {
+                                    item = new PermitModel();
+                                    item.PermitId = Convert.ToInt32(dr["permitId"]);
+                                    item.PermitName = dr["permitName"].ToString();
+                                    return item;
+                                }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return null;
+        }
+
         public IEnumerable<PermitModel> GetAll()
         {
             List<PermitModel> list;

@@ -27,7 +27,8 @@ namespace Encuesta
 
         private void btnAddQuestion_Click(object sender, EventArgs e)
         {
-            Program.SetMainPanelForm(new QuizForm());
+            if (UserServices.ValidateAccess("AgregarEncuestas"))
+                Program.SetMainPanelForm(new QuizForm());
         }
 
         int GetSelectedQuizId(int rowIndex)
@@ -37,7 +38,8 @@ namespace Encuesta
 
         private void dgQuizes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Program.SetMainPanelForm(new QuizForm(GetSelectedQuizId(e.RowIndex)));
+            if (UserServices.ValidateAccess("AgregarEncuestas"))
+                Program.SetMainPanelForm(new QuizForm(GetSelectedQuizId(e.RowIndex)));
         }
 
         private void dgQuizes_CellContentClick(object sender, DataGridViewCellEventArgs e)

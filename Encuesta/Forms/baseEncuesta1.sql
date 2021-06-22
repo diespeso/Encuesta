@@ -1,5 +1,5 @@
 -- MySqlBackup.NET 2.3.4
--- Dump Time: 2021-06-21 22:08:29
+-- Dump Time: 2021-06-21 21:26:55
 -- --------------------------------------
 -- Server version 8.0.23 MySQL Community Server - GPL
 
@@ -13,11 +13,12 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+CREATE DATABASE IF NOT EXISTS encuesta;
+USE encuesta;
 
 -- 
 -- Definition of answergroup
 -- 
-
 DROP TABLE IF EXISTS `answergroup`;
 CREATE TABLE IF NOT EXISTS `answergroup` (
   `answerGroupId` int NOT NULL AUTO_INCREMENT,
@@ -264,7 +265,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`userId`),
   KEY `roleId` (`roleId`),
   CONSTRAINT `user_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `userrole` (`userRoleId`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- 
 -- Dumping data for table user
@@ -273,8 +274,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user`(`userId`,`roleId`,`userName`,`password`) VALUES
 (1,1,'admin','$MYHASH$V1$10000$JlYHf7XUteA2E+e4aF1ufie8Zo8eB0OqUZyVOvYOUauAIwgl'),
-(2,2,'reportes','$MYHASH$V1$10000$LbgmiWt9hctr4nijycJhm0c+0rIclR1Eli6nTw/LGH/63VhL'),
-(3,3,'encuestas','$MYHASH$V1$10000$8r6xXus+pgIxWGjgfWVNPb9h+QeF3SgMGy0uWp/KkicOTK3w');
+(2,2,'reportes','reportes');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 -- 
@@ -335,5 +335,5 @@ INSERT INTO `userrole_has_permit`(`userRoleId`,`permitId`,`permitAllowed`) VALUE
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 
--- Dump completed on 2021-06-21 22:08:29
--- Total time: 0:0:0:0:125 (d:h:m:s:ms)
+-- Dump completed on 2021-06-21 21:26:55
+-- Total time: 0:0:0:0:96 (d:h:m:s:ms)

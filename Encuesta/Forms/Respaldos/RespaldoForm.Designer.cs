@@ -108,6 +108,7 @@ namespace Encuesta.Forms
             this.Controls.Add(this.lblDir);
             this.Controls.Add(this.txtDir);
             this.Controls.Add(this.lblMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RespaldoForm";
             this.Text = "Respaldar";
             this.Load += new System.EventHandler(this.RespaldoForm_Load);

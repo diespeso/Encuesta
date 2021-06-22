@@ -32,12 +32,14 @@ namespace Encuesta
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Program.SetMainPanelForm(new DevicesMainView());
+            if(UserServices.ValidateAccess("VerDispositivos")) 
+                Program.SetMainPanelForm(new DevicesMainView());
         }
 
         private void cmdNuevaEncuesta_Click(object sender, EventArgs e)
         {
-            Program.SetMainPanelForm(new QuizMainView());
+            if (UserServices.ValidateAccess("VerEncuestas"))
+                Program.SetMainPanelForm(new QuizMainView());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,17 +58,20 @@ namespace Encuesta
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            Program.SetMainPanelForm(new ReporteMes(_quizServices.GetQuizKeyValuePair()));
+            if (UserServices.ValidateAccess("VerReportes"))
+                Program.SetMainPanelForm(new ReporteMes(_quizServices.GetQuizKeyValuePair()));
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            Program.SetMainPanelForm(new UserMainView());
+            if (UserServices.ValidateAccess("VerUsuarios"))
+                Program.SetMainPanelForm(new UserMainView());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Program.SetMainPanelForm(new RespaldoForm());
+            if (UserServices.ValidateAccess("Respaldos"))
+                Program.SetMainPanelForm(new RespaldoForm());
         }
     }
 }

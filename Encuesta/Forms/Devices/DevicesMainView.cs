@@ -26,7 +26,8 @@ namespace Encuesta
 
         private void btnAddQuestion_Click(object sender, EventArgs e)
         {
-            Program.SetMainPanelForm(new DeviceForm());
+            if (UserServices.ValidateAccess("AgregarDispositivos"))
+                Program.SetMainPanelForm(new DeviceForm());
         }
 
         int GetSelectedDataGridItem(int rowIndex)
@@ -36,7 +37,8 @@ namespace Encuesta
 
         private void dgQuizes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Program.SetMainPanelForm(new DeviceForm(GetSelectedDataGridItem(e.RowIndex)));
+            if (UserServices.ValidateAccess("AgregarDispositivos"))
+                Program.SetMainPanelForm(new DeviceForm(GetSelectedDataGridItem(e.RowIndex)));
         }
     }
 }

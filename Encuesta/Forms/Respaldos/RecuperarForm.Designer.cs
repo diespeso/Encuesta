@@ -29,24 +29,12 @@ namespace Encuesta.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmdDir = new System.Windows.Forms.Button();
             this.lblDir = new System.Windows.Forms.Label();
             this.txtDir = new System.Windows.Forms.TextBox();
             this.cmdRecovery = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.cmdDir = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // cmdDir
-            // 
-            this.cmdDir.FlatAppearance.BorderSize = 0;
-            this.cmdDir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdDir.Image = global::Encuesta.Properties.Resources.open_folder;
-            this.cmdDir.Location = new System.Drawing.Point(384, 75);
-            this.cmdDir.Name = "cmdDir";
-            this.cmdDir.Size = new System.Drawing.Size(33, 28);
-            this.cmdDir.TabIndex = 6;
-            this.cmdDir.UseVisualStyleBackColor = true;
-            this.cmdDir.Click += new System.EventHandler(this.cmdDir_Click);
             // 
             // lblDir
             // 
@@ -84,6 +72,18 @@ namespace Encuesta.Forms
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cmdDir
+            // 
+            this.cmdDir.FlatAppearance.BorderSize = 0;
+            this.cmdDir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdDir.Image = global::Encuesta.Properties.Resources.open_folder;
+            this.cmdDir.Location = new System.Drawing.Point(384, 75);
+            this.cmdDir.Name = "cmdDir";
+            this.cmdDir.Size = new System.Drawing.Size(33, 28);
+            this.cmdDir.TabIndex = 6;
+            this.cmdDir.UseVisualStyleBackColor = true;
+            this.cmdDir.Click += new System.EventHandler(this.cmdDir_Click);
+            // 
             // RecuperarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,6 +94,7 @@ namespace Encuesta.Forms
             this.Controls.Add(this.cmdDir);
             this.Controls.Add(this.lblDir);
             this.Controls.Add(this.txtDir);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RecuperarForm";
             this.Text = "Recuperar";
             this.ResumeLayout(false);
