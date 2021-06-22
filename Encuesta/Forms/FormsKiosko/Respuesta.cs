@@ -55,19 +55,14 @@ namespace Encuesta
             {
                 case 1:
                     return RespuestaCualitativa.TERRIBLE;
-                    break;
                 case 2:
                     return RespuestaCualitativa.MALO;
-                    break;
                 case 3:
                     return RespuestaCualitativa.REGULAR;
-                    break;
                 case 4:
                     return RespuestaCualitativa.BUENO;
-                    break;
                 case 5:
                     return RespuestaCualitativa.EXCELENTE;
-                    break;
                 default:
                     return RespuestaCualitativa.INVALIDO;
             }

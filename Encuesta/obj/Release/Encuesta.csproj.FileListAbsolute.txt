@@ -25,10 +25,14 @@ C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\bin\Release\LiveCharts.Wp
 C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\bin\Release\LiveCharts.Wpf.xml
 C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\bin\Release\MySql.Data.xml
 C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.DemoKiosko.resources
+C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.Forms.FormsKiosko.FormSelectDevice.resources
 C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.Menu_Admin.resources
 C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.QuestionForm.resources
+C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.DevicesMainView.resources
+C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.DeviceForm.resources
+C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.Forms.UserForm.resources
+C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.UserMainView.resources
 C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.ReporteMes.resources
-C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.NuevoDispositivo.resources
 C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.QuizForm.resources
 C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.QuizMainView.resources
 C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.Login.resources
@@ -40,6 +44,3 @@ C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.cspr
 C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.csproj.CopyComplete
 C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.exe
 C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.pdb
-C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.csprojAssemblyReference.cache
-C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.DevicesMainView.resources
-C:\Users\Oscar\Documents\IngSistemas\Encuesta\Encuesta\obj\Release\Encuesta.DeviceForm.resources

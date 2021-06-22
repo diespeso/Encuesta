@@ -17,7 +17,14 @@ namespace Encuesta.Services
 
         public bool Login(string username, string password)
         {
-            return SecurePasswordHasher.Verify(password,userRepository.GetByUserName(username).Password);
+            try
+            {
+                return SecurePasswordHasher.Verify(password, userRepository.GetByUserName(username).Password);
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         //Procedimiento para guardar nuevo usuario
